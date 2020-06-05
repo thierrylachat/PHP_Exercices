@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timer</title>
+
+    <style>
+        .wrap {
+            width: 25%;
+            margin: auto;
+            margin-top: 10em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        p {
+            text-align: center;
+            padding: 10px;
+            background-color: lightslategrey;
+            grid-column: 1/4;
+        }
+
+        .start {
+            padding: 20px;
+            grid-column: 1/2;
+        }
+
+        .stop {
+            grid-column: 2/3;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="wrap">
+        <p class="timer">0</p>
+        <button type="button" class="start">Start</button>
+        <button type="button" class="stop">Stop</button>
+        <button type="button" class="reset">Reset</button>
+    </div>
+
+    <script src="Assets/JS/script.js"></script>
+
+</body>
+
+</html>
