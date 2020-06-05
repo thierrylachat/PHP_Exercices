@@ -6,9 +6,16 @@
     include 'header.php';
 ?>
 
-<!-- Affichage de la variable name. -->
+<!-- Affichage du message si l'âge est supérieur ou égale à 18", afficher Vous êtes majeur. Dans le cas contraire, afficher "Vous êtes mineur". -->
 
-<p class="<?= $name ?>"><?php echo $name; ?></p>
+<p>
+if ($age < 18) 
+{
+    echo 'Vous êtes majeur !';
+} else {
+    echo 'Vous êtes mineur !';
+}
+</p>
 
 <!-- Insertion du footer. -->
 
