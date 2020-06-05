@@ -2,9 +2,9 @@
 
 <?php
     $string= 'Hello world !';
-    $int= '100';
-    $float= '15.23';
-    $boolean= 'true';
+    $int= 100;
+    $float= 15.23;
+    $boolean= true;
 
     $titre= 'Exercice 4';
     include 'header.php';

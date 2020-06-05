@@ -1,19 +1,15 @@
 <!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $km= '1';
-    $titre= 'Exercice 3';
+    $name= 'Hélène';
+    $titre= 'Exercice 6';
     include 'header.php';
     // include 'navbar.php';
 ?>
 
-<!-- Affichage de la variable km et changement successive de la valeur. -->
+<!-- Affichage du message: "Bonjour + name + , comment vas tu ?"-->
 
-<p><?= $km ?></p>
-<?php $km= '3'; ?>
-<p><?= $km ?></p>
-<?php $km= '125'; ?>
-<p><?= $km ?></p>
+<p><?php echo 'Bonjour '.$name.', comment vas tu ?';?></p>
 
 <!-- Insertion du footer. -->
 

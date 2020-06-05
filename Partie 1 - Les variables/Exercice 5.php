@@ -1,19 +1,17 @@
 <!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $km= '1';
-    $titre= 'Exercice 3';
+    $int= 0;
+    $titre= 'Exercice 5';
     include 'header.php';
     // include 'navbar.php';
 ?>
 
-<!-- Affichage de la variable km et changement successive de la valeur. -->
+<!-- Affichage de la variable int nulle et remplacement de sa valeur par 100.-->
 
-<p><?= $km ?></p>
-<?php $km= '3'; ?>
-<p><?= $km ?></p>
-<?php $km= '125'; ?>
-<p><?= $km ?></p>
+<p><?= $int ?></p>
+<?php $int= 100; ?>
+<p><?= $int ?></p>
 
 <!-- Insertion du footer. -->
 
