@@ -1,19 +1,22 @@
 <!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $km= '1';
-    $titre= 'Exercice 2';
+    $string= 'Hello world !';
+    $int= '100';
+    $float= '15.23';
+    $boolean= 'true';
+
+    $titre= 'Exercice 4';
     include 'header.php';
     // include 'navbar.php';
 ?>
 
-<!-- Affichage de la variable km et changement successive de la valeur. -->
+<!-- Affichage des variables string, int, float et boolean. -->
 
-<p><?= $km ?></p>
-<?php $km= '3' ?>
-<p><?= $km ?></p>
-<?php $km= '125' ?>
-<p><?= $km ?></p>
+<p><?= $string ?></p>
+<p><?= $int ?></p>
+<p><?= $float ?></p>
+<p><?= $boolean ?></p>
 
 <!-- Insertion du footer. -->
 

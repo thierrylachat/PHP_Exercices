@@ -2,7 +2,7 @@
 
 <?php
     $km= '1';
-    $titre= 'Exercice 2';
+    $titre= 'Exercice 3';
     include 'header.php';
     // include 'navbar.php';
 ?>
