@@ -1,7 +1,7 @@
 <!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $int= 0;
+    $int= null;
     $titre= 'Exercice 5';
     include 'header.php';
 ?>
@@ -11,6 +11,9 @@
 <p><?= $int ?></p>
 <?php $int= 100; ?>
 <p><?= $int ?></p>
+
+<!-- Affichage du type et de la valeur de la variable. A retravailler ! -->
+<?php var_dump($int); ?>
 
 <!-- Insertion du footer. -->
 

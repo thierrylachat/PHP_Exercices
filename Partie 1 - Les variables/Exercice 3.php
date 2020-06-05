@@ -8,11 +8,11 @@
 
 <!-- Affichage de la variable km et changement successive de la valeur. -->
 
-<p><?= $km ?></p>
+<p> <?= $km.'km' ?> </p>
 <?php $km= '3'; ?>
-<p><?= $km ?></p>
+<p> <?= $km.'km' ?> </p>
 <?php $km= '125'; ?>
-<p><?= $km ?></p>
+<p> <?= $km.'km' ?> </p>
 
 <!-- Insertion du footer. -->
 
