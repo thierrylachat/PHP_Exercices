@@ -4,7 +4,6 @@
     $int= 0;
     $titre= 'Exercice 5';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage de la variable int nulle et remplacement de sa valeur par 100.-->

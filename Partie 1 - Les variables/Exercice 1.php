@@ -4,7 +4,6 @@
     $name= 'Hélène';
     $titre= 'Exercice 1';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage de la variable name. -->

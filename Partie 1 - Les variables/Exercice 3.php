@@ -4,7 +4,6 @@
     $km= '1';
     $titre= 'Exercice 3';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage de la variable km et changement successive de la valeur. -->

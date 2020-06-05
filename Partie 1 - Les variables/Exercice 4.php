@@ -8,7 +8,6 @@
 
     $titre= 'Exercice 4';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage des variables string, int, float et boolean. -->

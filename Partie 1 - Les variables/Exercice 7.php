@@ -6,12 +6,11 @@
     $age=33;
     $titre= 'Exercice 7';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage du message: Bonjour + lastname + firstname + , tu as + age + ans.-->
 
-<p><?php echo 'Bonjour '.$lastname.' '.$firstname.', tu as '.$age.'ans.';?></p>
+<p><?php echo 'Bonjour '.$lastname.' '.$firstname.', tu as '.$age.' ans.';?></p>
 
 <!-- Insertion du footer. -->
 

@@ -6,7 +6,6 @@
     $z= 45/5;
     $titre= 'Exercice 8';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage des valeurs x, y et z.  -->

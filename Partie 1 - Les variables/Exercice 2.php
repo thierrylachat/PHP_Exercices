@@ -6,7 +6,6 @@
     $age= '33';
     $titre= 'Exercice 2';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage des variables lastname, firstname et age. -->

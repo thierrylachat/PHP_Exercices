@@ -4,7 +4,6 @@
     $name= 'Hélène';
     $titre= 'Exercice 6';
     include 'header.php';
-    // include 'navbar.php';
 ?>
 
 <!-- Affichage du message: "Bonjour + name + , comment vas tu ?"-->
