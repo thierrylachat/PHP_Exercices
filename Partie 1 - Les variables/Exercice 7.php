@@ -10,7 +10,8 @@
 
 <!-- Affichage du message: Bonjour + lastname + firstname + , tu as + age + ans.-->
 
-<p><?php echo 'Bonjour '.$lastname.' '.$firstname.', tu as '.$age.' ans.';?></p>
+<p> <?php echo 'Bonjour '.$lastname.' '.$firstname.', tu as '.$age.' ans.';?> </p>
+<p>Bonjour <?= $lastname.' '.$firstname; ?>, tu as <?= $age; ?> ans.</p>
 
 <!-- Insertion du footer. -->
 
