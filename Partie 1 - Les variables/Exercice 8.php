@@ -12,7 +12,7 @@ Insertion du header et de la barre de navigation. -->
     include 'header.php';
 ?>
 
-<!-- Affichage des variables x, y et z. -->
+<!-- Affichage du contenu des variables x, y et z. -->
 
 <p><?= $x; ?></p>
 <p><?= $y; ?></p>
