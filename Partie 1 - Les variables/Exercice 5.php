@@ -1,4 +1,4 @@
-<!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
+<!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
     $int= null;
@@ -6,14 +6,14 @@
     include 'header.php';
 ?>
 
-<!-- Affichage de la variable int nulle et remplacement de sa valeur par 100.-->
+<!-- Affichage de la variable int de type null. -->
 
-<p><?= $int ?></p>
-<?php $int= 100; ?>
-<p><?= $int ?></p>
-
-<!-- Affichage du type et de la valeur de la variable. A retravailler ! -->
 <?php var_dump($int); ?>
+
+<!-- Remplacement de la valeur de int par 100 avec affichage. -->
+
+<?php $int= 100; ?>
+<p><?= $int; ?></p>
 
 <!-- Insertion du footer. -->
 
