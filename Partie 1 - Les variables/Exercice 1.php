@@ -1,4 +1,4 @@
-<!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
+<!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
     $name= 'Hélène';
@@ -12,4 +12,4 @@
 
 <!-- Insertion du footer. -->
 
-<?php include 'footer.php';
+<?php include 'footer.php'; ?>
