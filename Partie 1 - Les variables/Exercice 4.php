@@ -1,4 +1,4 @@
-<!-- Initialisation de variables et insertion du header et de la barre de navigation. -->
+<!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
     $string= 'Hello world !';
