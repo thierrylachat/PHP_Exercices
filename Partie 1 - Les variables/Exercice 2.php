@@ -3,7 +3,7 @@
 <?php
     $lastname= 'Guibaud';
     $firstname= 'Hélène';
-    $age= '33';
+    $age= 33;
     $titre= 'Exercice 2';
     include 'header.php';
 ?>
