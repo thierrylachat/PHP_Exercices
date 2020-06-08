@@ -6,27 +6,21 @@
     include 'header.php';
 ?>
 
+
 <!-- Afficher "C'est facile !!" si c'est vrai. Dans le cas contraire afficher "C'est difficile !!!". -->
 
-<p>
-    <?php if ($isEasy == true) {
-        echo "C'est facile !!";
-    } else {
-        echo "C'est difficile !!!";
-    }
-    ?>
-</p>
+<?php if ($isEasy) { ?>
+    <p>C'est facile !!</p>
+<?php } else { ?>
+    <p>C'est difficile !!!</p>
+<?php } ?>
 
-<p>
-    <?php if ($isEasy != true) {
-        echo "C'est difficile !!!";
-    } else {
-        echo "C'est facile !!";
-    }
-    ?>
-</p>
 
-<!-- Deuxième solution. -->
+<?php if (!$isEasy) { ?>
+    <p>C'est difficile !!!</p>
+<?php } else { ?>
+    <p>C'est facile !!</p>
+<?php } ?>
 
 
 <!-- Insertion du footer. -->
