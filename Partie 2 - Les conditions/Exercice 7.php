@@ -1,11 +1,3 @@
-<!-- Création de variable et insertion du header et de la barre de navigation. -->
-
-<?php
-    $isOk = true;
-    $titre= 'Exercice 7';
-    include 'header.php';
-?>
-
 <!-- Traduire ce code avec des if et des else :  
 
     <?php
@@ -13,11 +5,34 @@
     ?> -->
 
 
-<!-- Méthode optimisée. -->
+<!-- Création de variable et insertion du header et de la barre de navigation. -->
+    
+<?php
+
+    $titre= 'Exercice 7';
+    include 'header.php';
+
+    $isOk = false;
+    if ($isOk == false)
+        {
+            $message = "Ce n'est pas bon !";
+        }
+        else
+        {
+           $message = "C'est OK !";
+        }  
+?>
+
+<!-- 1° solution : affichage du message dans un paragraphe. -->
+
+<p><?= $message ?></p>
+
+<!-- 2° solution : alternance php et html. -->
+
 <?php if ($isOk == false) { ;?>
-<p>Ce n'est pas bon !</p>
+    <p>Ce n'est pas bon !</p>
 <?php } else { ;?>
-<p>C'est bon !</p>
+    <p>C'est bon !</p>
 <?php } ;?>
 
 
