@@ -1,9 +1,9 @@
-<!-- Création de variable et insertion du header et de la barre de navigation. -->
+<!-- Création de variable et du switch et insertion du header et de la barre de navigation. -->
 
 <?php
-    $magnitude= 8;
     $titre= 'Exercice 4';
     include 'header.php';
+    $magnitude= 8;
     switch($magnitude) {
         case '1':
             $message = "Micro-séisme impossible à ressentir."; 
