@@ -1,4 +1,4 @@
-<!-- Création de variables et insertion du header et de la barre de navigation. -->
+<!-- Création de variable et insertion du header et de la barre de navigation. -->
 
 <?php
     $magnitude= 8;
