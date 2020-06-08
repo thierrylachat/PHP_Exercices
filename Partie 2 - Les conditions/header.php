@@ -14,7 +14,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-        <a class="navbar-brand font-weight-bold" href="#">PHP PARTIE 2 - LES CONDITIONS</a>
+        <a class="navbar-brand font-weight-bold" href="../index.php">PHP PARTIE 2 - LES CONDITIONS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
             aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,28 +23,28 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 1">Exercice 1<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../Exercice 1">Exercice 1<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 2">Exercice 2</a>
+                    <a class="nav-link" href="../Exercice 2">Exercice 2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 3">Exercice 3</a>
+                    <a class="nav-link" href="../Exercice 3">Exercice 3</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 4">Exercice 4</a>
+                    <a class="nav-link" href="../Exercice 4">Exercice 4</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 5">Exercice 5</a>
+                    <a class="nav-link" href="../Exercice 5">Exercice 5</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 6">Exercice 6</a>
+                    <a class="nav-link" href="../Exercice 6">Exercice 6</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 7">Exercice 7</a>
+                    <a class="nav-link" href="../Exercice 7">Exercice 7</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Partie 2 - Les conditions/Exercice 8">Exercice 8</a>
+                    <a class="nav-link" href="../Exercice 8">Exercice 8</a>
                 </li>
             </ul>
         </div>
