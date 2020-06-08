@@ -1,4 +1,4 @@
-<!-- Création de variables.
+<!-- Création des 3 variables x, y et z.
 Dans la première mettre le résultat de l'opération 3 + 4.  
 Dans la deuxième mettre le résultat de l'opération 5 * 20.  
 Dans la troisième mettre le résultat de l'opération 45 / 5.  
