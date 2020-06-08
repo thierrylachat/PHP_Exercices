@@ -2,8 +2,8 @@
 
 <?php
     $lastname= 'Guibaud';
-    $firstname='Hélène';
-    $age=33;
+    $firstname= 'Hélène';
+    $age= 33;
     $titre= 'Exercice 7';
     include 'header.php';
 ?>

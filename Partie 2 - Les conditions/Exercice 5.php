@@ -23,7 +23,7 @@
     ?>
 </p>
 
-<!-- Seconde méthode optimmisée. -->
+<!-- Seconde méthode optimisée. -->
 <?php if ($gender != 'Homme') { ;?>
 <p>C'est une développeuse !!!</p>
 <?php } else { ;?>
