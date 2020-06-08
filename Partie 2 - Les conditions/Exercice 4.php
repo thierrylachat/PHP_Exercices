@@ -32,6 +32,8 @@
         case '9':
             $message = "Séisme capable de tout détruire sur une très vaste zone."; 
             break;
+        default :
+            $message = "Valeur inconue";
     }
 ?>
 

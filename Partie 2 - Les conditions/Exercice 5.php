@@ -1,33 +1,37 @@
-<!-- Création de variable et insertion du header et de la barre de navigation. -->
-
-<?php
-    $gender= 'Homme';
-    $titre= 'Exercice 5';
-    include 'header.php';
-?>
-
 <!-- Traduire ce code avec des if et des else :
 
     <?php
         echo ($gender != 'Homme') ? 'C\'est une développeuse !!!' : 'C\'est un développeur !!!';
     ?> -->
 
-<!-- Première méthode non optimisée. -->
-<p>
-    <?php
-    if ($gender != 'Homme') {
-        echo "C'est une développeuse !!!";
-    } else {
-        echo "C'est un développeur !!!";
-    }
-    ?>
-</p>
+    
+<!-- Création de variable et insertion du header et de la barre de navigation. -->
 
-<!-- Seconde méthode optimisée. -->
+<?php
+    $gender= 'Homme';
+    $titre= 'Exercice 5';
+    include 'header.php';
+
+    $genre = "Femme";
+    if ($genre != "Homme")
+    {
+        $message = "C'est une développeuse !!!";
+    }
+    else
+    {
+       $message = "C'est un développeur !!!";
+    }
+?>
+
+
+<!-- 1° solution -->
+<p><?= $message ?></p>
+
+<!-- 2° solution -->
 <?php if ($gender != 'Homme') { ;?>
-<p>C'est une développeuse !!!</p>
+    <p>C'est une développeuse !!!</p>
 <?php } else { ;?>
-<p>C'est un développeur !!!</p>
+    <p>C'est un développeur !!!</p>
 <?php } ;?>
 
 
