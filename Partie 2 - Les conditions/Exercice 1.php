@@ -20,3 +20,29 @@
 <!-- Insertion du footer. -->
 
 <?php include 'footer.php'; ?>
+
+
+<!-- Deuxième solution -->
+<?php
+    $age= 45;
+    $message= '';
+    if ($age > 18) {
+        $message = 'Vous êtes majeur !';
+    } else {
+        $message = 'Vous êtes mineur !';
+    }
+?>
+
+<p><?= $message; ?></p>
+
+<!-- Troisième solution pas besoin du echo...-->
+<?php
+$age = 32;
+?>
+
+<?php
+if ($age >= 18 ) { ?> 
+    <p>Vous êtes majeur !</p>
+<?php } else { ?> 
+    <p>Vous êtes mineur !</p>
+<?php }

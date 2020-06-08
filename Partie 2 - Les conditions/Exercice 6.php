@@ -6,13 +6,12 @@
     include 'header.php';
 ?>
 
-<!-- Traduire ce code avec des if et des else :
+<!-- Traduire ce code avec des if et des else :  
 
     <?php
-        echo ($gender != 'Homme') ? 'C\'est une développeuse !!!' : 'C\'est un développeur !!!';
+        echo ($age >= 18) ? 'Tu es majeur' : 'Tu n\'es pas majeur';
     ?> -->
 
-<!-- Première méthode non optimisée. -->
 <p>
     <?php
     if ($gender != 'Homme') {
@@ -22,14 +21,6 @@
     }
     ?>
 </p>
-
-<!-- Seconde méthode optimmisée. -->
-<?php if ($gender != 'Homme') { ;?>
-<p>C'est une développeuse !!!</p>
-<?php } else { ;?>
-<p>C'est un développeur !!!</p>
-<?php } ;?>
-
 
 <!-- Insertion du footer. -->
 

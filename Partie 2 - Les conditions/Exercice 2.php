@@ -26,6 +26,9 @@
     ?>
 </p>
 
+<!-- Deuxième solution. -->
+
+
 <!-- Insertion du footer. -->
 
 <?php include 'footer.php'; ?>
