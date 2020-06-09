@@ -15,7 +15,7 @@
 } ?>
 
 
-<!-- Affichage de la concaténation avec appel de la fonction concat. -->
+<!-- Affichage de la concaténation du nombre avec la chaine de caractères avec appel de la fonction concat. -->
 
 <p><?= concat('Louis', 16); ?></p>
 
