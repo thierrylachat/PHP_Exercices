@@ -9,14 +9,16 @@ Tant que cette variable n'atteint pas 10, il faut :
 <?php
     $titre= 'Exercice 4';
     include 'header.php';
-    $firstNumber = 9;
-    $secondNumber = 55;
+    $i = 1;
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Création d'une boucle While -->
 
-
+<?php while ($i < 10) { ?>
+    <p> <?php echo $i; ?> </p>
+<?php $i += $i / 2 ;
+    } ?>
 
 
 <!-- Insertion du footer. -->
