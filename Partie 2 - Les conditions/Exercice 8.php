@@ -12,8 +12,8 @@
     $titre= 'Exercice 8';
     include 'header.php';
 
-    $isOk = true;
-    if ($isOk == true)
+    $isOk = NULL;
+    if ($isOk)
         {
             $message = "C'est OK !";
         }
@@ -29,7 +29,7 @@
 
 <!-- 2° solution : alternance php et html. -->
 
-<?php if ($isOk == true) { ;?>
+<?php if ($isOk) { ;?>
     <p>C'est OK !</p>
 <?php } else { ;?>
     <p>Ce n'est pas bon !</p>
