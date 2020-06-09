@@ -1,7 +1,7 @@
 <!-- Traduire ce code avec des if et des else :  
 
     <?php
-     echo ($isOk) ? 'c\'est ok !!' : 'c\'est pas bon !!!';
+        echo ($isOk) ? 'c\'est ok !!' : 'c\'est pas bon !!!';
     ?> -->
 
 
@@ -15,7 +15,7 @@
     $isOk = NULL;
     if ($isOk)
         {
-            $message = "C'est OK !";
+           $message = "C'est OK !";
         }
         else
         {
