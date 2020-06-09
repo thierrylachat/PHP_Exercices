@@ -1,4 +1,6 @@
-<!-- En allant de 200 à 0 avec un pas de 12, afficher le message Enfin !!!!. -->
+<!-- Enoncé : 
+Faire une fonction qui prend en paramètre trois nombres et qui renvoie la somme de ces nombres.  
+Tous les paramètres doivent avoir une valeur par défaut. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -9,11 +11,16 @@
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Création de la fonction prez. -->
 
-<?php for($step = 1; $step <= 15; $step ++ ) {?>
-    <p><?php echo 'On y arrive presque'; ?> </p>
-<?php } ?>
+<?php function sum($number1, $number2, $number3) {
+    return 'Vous êtes un '.$gender.' et vous êtes '.$age.'.';
+} ?>
+
+
+<!-- Affichage de la concaténation avec appel de la fonction prez. -->
+
+<p><?= sum(3, 10, 4); ?></p>
 
 
 <!-- Insertion du footer. -->

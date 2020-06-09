@@ -5,6 +5,7 @@ Le premier nombre est plus grand si le premier nombre est plus grand que le deux
 Le premier nombre est plus petit si le premier nombre est plus petit que le deuxième
 Les deux nombres sont identiques si les deux nombres sont égaux -->
 
+
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
@@ -19,19 +20,18 @@ Les deux nombres sont identiques si les deux nombres sont égaux -->
 <?php
     function compareNumbers($number1, $number2) {
         if ($number1 > $number2) {
-            echo $message = "Le premier nombre est plus grand que le deuxième.";
+            return 'Le premier nombre est plus grand que le deuxième.';
         } elseif ($number2 > $number1) {
-            echo $message = "Le premier nombre est plus petit que le deuxième.";
-        } else {
-            echo $message = "Les deux nombres sont identiques si les deux nombres sont égaux";
+            return 'Le premier nombre est plus petit que le deuxième.';
         }
+        return "Les deux nombres sont identiques si les deux nombres sont égaux";
     }
 ;?>
 
 
 <!-- Affichage du message avec appel de la fonction compareNumbers. -->
 
-<p><?= compareNumbers(3, 4); ?></p>
+<p><?= compareNumbers(rand(1,10), rand(1,10)); ?></p>
 
 
 <!-- Insertion du footer. -->

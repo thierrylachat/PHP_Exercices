@@ -10,14 +10,14 @@
 
 <!-- Création de la fonction myFunction. -->
 
-<?php function myFunction() {
+<?php function boolean() {
     return true;
 } ?>
 
 
 <!-- Appel de la fonction myFunction. -->
 
-<p><?=  myFunction(); ?></p>
+<p><?=  boolean(); ?></p>
 
 
 <!-- Insertion du footer. -->

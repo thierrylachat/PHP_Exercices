@@ -10,14 +10,14 @@
 
 <!-- Création de la fonction concat. -->
 
-<?php function concat($number, $string) {
-    return $number.' '.$string;
+<?php function concat($string, $number) {
+    return $string.' '.$number;
 } ?>
 
 
 <!-- Affichage de la concaténation avec appel de la fonction concat. -->
 
-<p><?= concat(3, 'home'); ?></p>
+<p><?= concat('Louis', 16); ?></p>
 
 
 <!-- Insertion du footer. -->

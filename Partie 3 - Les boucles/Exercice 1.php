@@ -12,10 +12,10 @@ Tant que cette variable n'atteint pas 10, il faut :
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Réalisation de la boucle while --> 
 
 <?php while ($i <= 10){ ?>
-    <p> <?php echo ' '.$i; ?> </p>
+    <p> <?php echo ''.$i; ?> </p>
 <?php $i++; } ?>
 
 

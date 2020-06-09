@@ -19,16 +19,16 @@ Gérer tous les cas. -->
 ?>
 
 
-<!-- Création de la fonction prez. -->
+<!-- Création de la fonction profile. -->
 
 <?php function profile($gender, $age) {
     return 'Vous êtes un '.$gender.' et vous êtes '.$age.'.';
 } ?>
 
 
-<!-- Affichage de la concaténation avec appel de la fonction prez. -->
+<!-- Affichage de la concaténation avec appel de la fonction profile. -->
 
-<p><?= profile('homme','mineur'); ?></p>
+<p><?= profile(substr(str_shuffle('FH'), 0, 1)), ran(1,30); ?></p>
 
 
 <!-- Insertion du footer. -->
