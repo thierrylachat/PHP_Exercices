@@ -1,4 +1,5 @@
-<!-- Créer deux variables. Initialiser la première à 0 et la deuxième avec un nombre compris en 1 et 100.  
+<!-- Créer deux variables. 
+Initialiser la première à 0 et la deuxième avec un nombre compris en 1 et 100.  
 Tant que la première variable n'est pas supérieure à 20 :
 - multiplier la première variable avec la deuxième
 - afficher le résultat
@@ -10,15 +11,17 @@ Tant que la première variable n'est pas supérieure à 20 :
 <?php
     $titre= 'Exercice 2';
     include 'header.php';
-    $i = 0;
+    $first = 0;
+    $second= 5;
 ?>
 
 
 <!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
 
-<?php while ($i <= 10){ ?>
-    <p> <?php echo ' '.$i; ?> </p>
-<?php $i++; } ?>
+<?php do { ?>
+    <p> <?php echo ' '.($first * $second); ?> </p>
+    <?php $first ++; ?>           
+    <?php } while ($first <= 20) ;?>
 
 
 <!-- Insertion du footer. -->
