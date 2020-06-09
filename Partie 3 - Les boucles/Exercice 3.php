@@ -10,14 +10,18 @@ Tant que la première variable n'est pas inférieure ou égale à 10 :
 <?php
     $titre= 'Exercice 3';
     include 'header.php';
-    $firstNumber = 9;
+    $firstNumber = 100;
     $secondNumber = 55;
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Création d'une boucle While -->
 
-
+<?php while ($firstNumber > 10){ ?>
+    <p> <?php echo $firstNumber * $secondNumber; ?> </p>
+<?php 
+    $firstNumber --;
+    } ?>
 
 
 <!-- Insertion du footer. -->

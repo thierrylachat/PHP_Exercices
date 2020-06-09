@@ -16,7 +16,7 @@ Tant que la première variable n'est pas supérieure à 20 :
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Réalisation de la boucle Do While. -->
 
 <?php do { ?>
     <p> <?php echo ' '.($first * $second); ?> </p>
