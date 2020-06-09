@@ -1,22 +1,37 @@
-<!-- Créer une variable et l'initialiser à 1.  
-Tant que cette variable n'atteint pas 10, il faut :
-- l'afficher
-- l'incrementer de la moitié de sa valeur -->
-
+<!-- Enoncé : 
+Faire une fonction qui prend en paramètre deux nombres. 
+La fonction doit retourner :
+Le premier nombre est plus grand si le premier nombre est plus grand que le deuxième
+Le premier nombre est plus petit si le premier nombre est plus petit que le deuxième
+Les deux nombres sont identiques si les deux nombres sont égaux -->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
     $titre= 'Exercice 4';
     include 'header.php';
-    $firstNumber = 9;
-    $secondNumber = 55;
+    $message;
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Création de la fonction compareNumbers. -->
+
+<?php
+    function compareNumbers($number1, $number2) {
+        if ($number1 > $number2) {
+            echo $message = "Le premier nombre est plus grand que le deuxième.";
+        } elseif ($number2 > $number1) {
+            echo $message = "Le premier nombre est plus petit que le deuxième.";
+        } else {
+            echo $message = "Les deux nombres sont identiques si les deux nombres sont égaux";
+        }
+    }
+;?>
 
 
+<!-- Affichage du message avec appel de la fonction compareNumbers. -->
+
+<p><?= compareNumbers(3, 4); ?></p>
 
 
 <!-- Insertion du footer. -->
