@@ -11,7 +11,6 @@ Les deux nombres sont identiques si les deux nombres sont égaux -->
 <?php
     $titre= 'Exercice 4';
     include 'header.php';
-    $message;
 ?>
 
 
