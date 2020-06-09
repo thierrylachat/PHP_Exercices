@@ -1,4 +1,4 @@
-<!-- Enoncé : faire une fonction qui prend en paramètre deux chaines de caractères et qui revoit la concaténation de ces deux chaines. -->
+<!-- Enoncé : faire une fonction qui prend en paramètre deux chaines de caractères et qui renvoie la concaténation de ces deux chaines. -->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
@@ -15,7 +15,7 @@
 } ?>
 
 
-<!-- Affichage du message ('Bonjour à tous') avec appel de la fonction concatString. -->
+<!-- Affichage du message ('Bonjour à tous !') avec appel de la fonction concatString. -->
 
 <p><?= concatString('Bonjour', 'à tous !'); ?></p>
 
