@@ -15,7 +15,7 @@
 } ?>
 
 
-<!-- Affichage du message ('Bonjour à tous') avec appel de la fonction displayString. -->
+<!-- Affichage du message ('Bonjour à tous !') avec appel de la fonction displayString. -->
 
 <p><?= displayString('Bonjour à tous !'); ?></p>
 
