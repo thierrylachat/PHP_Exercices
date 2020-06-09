@@ -1,5 +1,6 @@
-<!-- En allant de 20 à 0 avec un pas de 1, afficher le message C'est presque bon. -->
-
+<!-- Enoncé : 
+Faire une fonction qui prend trois paramètres : le nom, le prénom et l'âge d'une personne. Elle doit renvoyer une chaine de la forme :  
+Bonjour + nom + prénom + , tu as + age + ans. -->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
@@ -9,11 +10,16 @@
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Création de la fonction prez. -->
 
-<?php for($step = 1; $step <= 15; $step ++ ) {?>
-    <p><?php echo 'On y arrive presque'; ?> </p>
-<?php } ?>
+<?php function prez($name, $firstname, $age) {
+    return 'Bonjour '.$name.' '.$firstname. ' tu as'.' '.$age.' ans.';
+} ?>
+
+
+<!-- Affichage de la concaténation avec appel de la fonction prez. -->
+
+<p><?= prez('Guibaud', 'Hélène', 33); ?></p>
 
 
 <!-- Insertion du footer. -->
