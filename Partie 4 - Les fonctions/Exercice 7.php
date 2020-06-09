@@ -1,4 +1,14 @@
-<!-- En allant de 1 à 100 avec un pas de 15, afficher le message On tient le bon bout. -->
+<!-- Enoncé : 
+Faire une fonction qui prend deux paramètres : l'âge et le genre d'une personne. 
+Le genre peut être : Homme Femme.
+
+La fonction doit renvoyer en fonction des paramètres :
+Vous êtes un homme et vous êtes majeur
+Vous êtes un homme et vous êtes mineur
+Vous êtes une femme et vous êtes majeure
+Vous êtes une femme et vous êtes mineure
+
+Gérer tous les cas. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -9,11 +19,16 @@
 ?>
 
 
-<!-- Première solution avec affichage du message "Vous êtes majeur" si l'âge est supérieur ou égal à 18. Dans le cas contraire, afficher "Vous êtes mineur". -->
+<!-- Création de la fonction prez. -->
 
-<?php for($step = 1; $step <= 15; $step ++ ) {?>
-    <p><?php echo 'On y arrive presque'; ?> </p>
-<?php } ?>
+<?php function profile($gender, $age) {
+    return 'Vous êtes un '.$gender.' et vous êtes '.$age.'.';
+} ?>
+
+
+<!-- Affichage de la concaténation avec appel de la fonction prez. -->
+
+<p><?= profile('homme','mineur'); ?></p>
 
 
 <!-- Insertion du footer. -->
