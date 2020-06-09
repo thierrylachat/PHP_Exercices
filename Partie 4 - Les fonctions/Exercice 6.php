@@ -10,16 +10,16 @@ Bonjour + nom + prénom + , tu as + age + ans. -->
 ?>
 
 
-<!-- Création de la fonction prez. -->
+<!-- Création de la fonction welcome. -->
 
-<?php function prez($name, $firstname, $age) {
-    return 'Bonjour '.$name.' '.$firstname. ' tu as'.' '.$age.' ans.';
+<?php function welcome($name, $firstname, $age) {
+    return 'Bonjour '.$name.' '.$firstname.' tu as '.$age.' ans.';
 } ?>
 
 
-<!-- Affichage de la concaténation avec appel de la fonction prez. -->
+<!-- Affichage de la concaténation avec appel de la fonction welcome. -->
 
-<p><?= prez('Guibaud', 'Hélène', 33); ?></p>
+<p><?= welcome('Guibaud', 'Hélène', 33); ?></p>
 
 
 <!-- Insertion du footer. -->
