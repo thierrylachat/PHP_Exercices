@@ -8,20 +8,28 @@ Tous les paramètres doivent avoir une valeur par défaut. -->
 <?php
     $titre= 'Exercice 8';
     include 'header.php';
+    $result;
 ?>
 
 
-<!-- Création de la fonction prez. -->
+<!-- Création de la fonction sum. -->
 
-<?php function sum($number1, $number2, $number3) {
-    return 'Vous êtes un '.$gender.' et vous êtes '.$age.'.';
+<?php function sum($x = 5, $y = 12, $z = 20) {
+    return $result = $x + $y+ $z;
 } ?>
 
 
-<!-- Affichage de la concaténation avec appel de la fonction prez. -->
+<!-- Affichage du nombre de paramètres. -->
+<?php function argsNumber() {
+    $numArgs = func_num_args();
+    echo $numArgs;
+} 
+argsNumber($x = 5, $y = 12, $z = 20); ?>
 
-<p><?= sum(3, 10, 4); ?></p>
 
+<!-- Affichage de la somme des 3 nombres avec appel de la fonction sum. -->
+
+<p><?= sum(); ?></p>
 
 <!-- Insertion du footer. -->
 
