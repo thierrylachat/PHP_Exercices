@@ -15,7 +15,7 @@
 } ?>
 
 
-<!-- Appel de la fonction myFunction. -->
+<!-- Appel de la fonction boolean. -->
 
 <p><?=  boolean(); ?></p>
 
