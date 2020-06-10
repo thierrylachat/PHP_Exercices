@@ -1,12 +1,4 @@
-<!-- Enoncé : 
-Faire une fonction qui prend deux paramètres : l'âge et le genre d'une personne. 
-Le genre peut être : Homme ou Femme.
-La fonction doit renvoyer en fonction des paramètres :
-Vous êtes un homme et vous êtes majeur.
-Vous êtes un homme et vous êtes mineur.
-Vous êtes une femme et vous êtes majeur.
-Vous êtes une femme et vous êtes mineur.
-Gérer tous les cas. -->
+<!-- Enoncé : avec le tableau de l'exercice 5, ajouter la ligne correspondant au département de la ville de Reims. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -17,27 +9,17 @@ Gérer tous les cas. -->
 ?>
 
 
-<!-- Création de la fonction profile. -->
+<!-- Report du tableau associatif. -->
 
-<?php
-    function profile($gender, $age){
-        $message = '';
-        if ($gender == 'F' && $age >= 18) {
-            $message = 'Vous êtes une femme et vous êtes majeur.';
-        }elseif ($gender == 'H' && $age >= 18) {
-            $message = 'Vous êtes un homme et vous êtes majeur.';
-        }elseif ($gender == 'F') {
-            $message = 'Vous êtes une femme et vous êtes mineur.';
-        }else {
-            $message = 'Vous êtes un homme et vous êtes mineur.';
-        }
-        return $message;
-    }
-?>
+<?php $departments = array("80"=>"Somme", "60"=>"Oise", "02"=>"Aisne", "62"=>"Pas-De-Calais", "59"=>"Nord"); ?>
+<?php $departments[51] = "Marne"; ?>
 
-<!-- Affichage de la concaténation avec appel de la fonction profile. -->
 
-<p><?= profile(substr(str_shuffle('FH'), 0, 1), rand(1,30)) ?></p>
+<!-- Affichage du tableau associatif. -->
+<?php foreach ($departments as $element) {
+    echo $element. '<br>'; }
+    ?>
+
 
 <!-- Insertion du footer. -->
 
