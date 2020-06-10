@@ -13,7 +13,6 @@
 
 <?php 
     $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-    $arrlength = count($months);
 ?>    
 
 <!-- Affichage de la troisième ligne du tableau soit l'index 2 du tableau. -->
