@@ -1,6 +1,4 @@
-<!-- Enoncé : 
-Faire une fonction qui prend en paramètre trois nombres et qui renvoie la somme de ces nombres.  
-Tous les paramètres doivent avoir une valeur par défaut. -->
+<!-- Enoncé : avec le tableau de l'exercice 1 et une boucle, afficher toutes les valeurs de ce tableau. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -8,28 +6,23 @@ Tous les paramètres doivent avoir une valeur par défaut. -->
 <?php
     $titre= 'Exercice 8';
     include 'header.php';
-    $result;
 ?>
 
 
-<!-- Création de la fonction sum. -->
+<!-- Création du tableau months. -->
 
-<?php function sum($x = 5, $y = 12, $z = 20) {
-    return $result = $x + $y+ $z;
-} ?>
-
-
-<!-- Affichage du nombre de paramètres. -->
-<?php function argsNumber() {
-    $numArgs = func_num_args();
-    echo $numArgs;
-} 
-argsNumber($x = 5, $y = 12, $z = 20); ?>
+<?php 
+    $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
+    $arrlength = count($months)-1;
+?>  
 
 
-<!-- Affichage de la somme des 3 nombres avec appel de la fonction sum. -->
+<!-- Utilisation d'une boucle For pour affichage du tableau. -->
+<?php for ($x = 0; $x <= $arrlength; $x++) {
+        echo $months[$x] .'<br />';
+        } 
+?>
 
-<p><?= sum(); ?></p>
 
 <!-- Insertion du footer. -->
 
