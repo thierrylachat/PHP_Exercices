@@ -18,7 +18,7 @@
 <!-- Affichage du tableau associatif. -->
 <?php foreach ($departments as $element) {
     echo $element. '<br>'; }
-    ?>
+?>
 
 
 <!-- Insertion du footer. -->

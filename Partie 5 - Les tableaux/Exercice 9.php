@@ -1,35 +1,25 @@
-<!-- Enoncé : 
-Faire une fonction qui prend en paramètre trois nombres et qui renvoie la somme de ces nombres.  
-Tous les paramètres doivent avoir une valeur par défaut. -->
+<!-- Enoncé : avec le tableau de l'exercice 5, afficher toutes les valeurs de ce tableau. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice 8';
+    $titre= 'Exercice 9';
     include 'header.php';
     $result;
 ?>
 
 
-<!-- Création de la fonction sum. -->
+<!-- Report du tableau associatif. -->
 
-<?php function sum($x = 5, $y = 12, $z = 20) {
-    return $result = $x + $y+ $z;
-} ?>
+<?php $departments = array("80"=>"Somme", "60"=>"Oise", "02"=>"Aisne", "62"=>"Pas-De-Calais", "59"=>"Nord"); ?>
 
 
-<!-- Affichage du nombre de paramètres. -->
-<?php function argsNumber() {
-    $numArgs = func_num_args();
-    echo $numArgs;
-} 
-argsNumber($x = 5, $y = 12, $z = 20); ?>
+<!-- Affichage du tableau associatif. -->
+<?php foreach ($departments as $element) {
+    echo $element. '<br>'; }
+?>
 
-
-<!-- Affichage de la somme des 3 nombres avec appel de la fonction sum. -->
-
-<p><?= sum(); ?></p>
 
 <!-- Insertion du footer. -->
 
