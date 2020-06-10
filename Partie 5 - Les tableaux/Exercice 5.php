@@ -1,4 +1,4 @@
-<!-- Enoncé : faire une fonction qui prend en paramètre un nombre et une chaine de caractères et qui renvoit la concaténation de ces deux paramètres. -->
+<!-- Enoncé : créer un tableau associatif avec comme index le numéro des départements des Hauts de France et en valeur leur nom. -->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
@@ -8,16 +8,16 @@
 ?>
 
 
-<!-- Création de la fonction concat. -->
+<!-- Création du tableau associatif. -->
 
-<?php function concat($string, $number) {
-    return $string.' '.$number;
-} ?>
+<?php $departments = array("80"=>"Somme", "60"=>"Oise", "02"=>"Aisne", "62"=>"Pas-De-Calais", "59"=>"Nord"); ?>
 
 
-<!-- Affichage de la concaténation du nombre avec la chaine de caractères avec appel de la fonction concat. -->
+<!-- Affichage du tableau. -->
 
-<p><?= concat('Louis', 16); ?></p>
+<?php foreach ($departments as $element) {
+    echo $element. '<br>'; }
+    ?>
 
 
 <!-- Insertion du footer. -->
