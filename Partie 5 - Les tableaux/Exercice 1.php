@@ -30,17 +30,17 @@ décembre -->
 ?>    
 
 
-<!-- 2°solution de création du tableau non fonctionnelle -->
-<!-- <?php for ($x = 0; $x <= $arrlength; $x++) { ;?>
-        <p><?= $months[$x] ;?></p>
-<?php } ;?> -->
-
-
 <!-- Affichage du tableau months. -->
 
 <?php foreach ($months as $element) {
     echo $element. '<br>'; }
-?>
+    ?>
+
+
+<!-- 2°solution de création du tableau non fonctionnelle -->
+ <!-- <?php for ($x = 0; $x <= $arrlength; $x++) { ;?>
+        <p><?= $months[$x] ;?></p>
+<?php } ;?> -->
 
 
 <!-- Insertion du footer. -->
