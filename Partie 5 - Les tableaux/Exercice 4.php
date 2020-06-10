@@ -13,12 +13,16 @@
 
 <?php 
     $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-    $arrlength = count($months);
+    array_splice($months, 7, 1, "Août");
 ?>    
 
-<!-- Affichage de l'index 3 du tableau. -->
 
-<p> <?= $months[3] ;?> </p>
+<!-- Affichage du tableau. -->
+
+<?php foreach ($months as $element) {
+    echo $element. '<br>'; }
+    ?>
+
 
 <!-- Insertion du footer. -->
 
