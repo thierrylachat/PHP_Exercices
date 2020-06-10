@@ -1,6 +1,4 @@
-<!-- Enoncé : 
-Faire une fonction qui prend trois paramètres : le nom, le prénom et l'âge d'une personne. Elle doit renvoyer une chaine de la forme :  
-Bonjour + nom + prénom + , tu as + age + ans. -->
+<!-- Enoncé : avec le tableau de l'exercice 5, afficher la valeur de l'index 59. -->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
@@ -10,16 +8,14 @@ Bonjour + nom + prénom + , tu as + age + ans. -->
 ?>
 
 
-<!-- Création de la fonction welcome. -->
+<!-- Report du tableau associatif. -->
 
-<?php function welcome($name, $firstname, $age) {
-    return 'Bonjour '.$name.' '.$firstname.' tu as '.$age.' ans.';
-} ?>
+<?php $departments = array("80"=>"Somme", "60"=>"Oise", "02"=>"Aisne", "62"=>"Pas-De-Calais", "59"=>"Nord"); ?>
 
 
-<!-- Affichage de la concaténation avec appel de la fonction welcome. -->
+<!-- Affichage de l'index 59 du tableau. -->
 
-<p><?= welcome('Guibaud', 'Hélène', 33); ?></p>
+<p> <?= $departments[59] ;?> </p>
 
 
 <!-- Insertion du footer. -->
