@@ -9,10 +9,16 @@
 ?>
 
 
-<!-- Création du formulaire demandant le nom et le prénom. -->
+<!-- Affichage des données lastName et firstName avec la méthode GET. -->
 
 <p><?php echo $_GET['lastName'] ;?></p>
 <p><?php echo $_GET['firstName'] ;?></p>
+
+
+<!-- Affichage des données lastName et firstName avec la méthode POST. -->
+
+<p><?php echo $_POST['lastName'] ;?></p>
+<p><?php echo $_POST['firstName'] ;?></p>
 
 
 <!-- Insertion du footer. -->

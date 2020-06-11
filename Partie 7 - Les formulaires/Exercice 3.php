@@ -1,4 +1,4 @@
-<!-- Enoncé : avec le tableau de l'exercice , afficher la valeur de l'index 5. -->
+<!-- Enoncé : avec le formulaire de l'exercice 1, afficher dans la page user.php les données du formulaire transmis. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -8,16 +8,7 @@
     include 'header.php';
 ?>
 
-
-<!-- Report du tableau months. -->
-
-<?php 
-    $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-?>    
-
-<!-- Affichage de l'index 3 du tableau. -->
-
-<p> <?= $months[3] ;?> </p>
+<p>Cf. l'exercice 1.</p>
 
 <!-- Insertion du footer. -->
 
