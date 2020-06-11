@@ -35,7 +35,7 @@
                     <a class="nav-link" href="../Exercice 4">Exercice 4</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice 5">Exercice 5</a>
+                    <a class="nav-link" href="../exercice5">Exercice 5</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Exercice 6">Exercice 6</a>
