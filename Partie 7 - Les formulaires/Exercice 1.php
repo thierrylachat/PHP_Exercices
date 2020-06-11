@@ -10,19 +10,22 @@ Ce formulaire doit rediriger vers la page user.php avec la méthode GET. -->
 ?>
 
 
-<!-- Création du tableau months. -->
+<!-- Création du formulaire demandant le nom et le prénom. -->
 
-<?php 
-    $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-    $arrlength = count($months);
-?>    
-
-
-<!-- Affichage du tableau months. -->
-
-<?php foreach ($months as $element) {
-    echo $element. '<br>'; }
-    ?>
+<div class="m-4 p-4 col-4 border border-secondary">
+    <form method="get" action="user.php">
+        <p class="font-weight-bold text-center text-uppercase">Formulaire de contact</p>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Nom</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="lastName" placeholder="Dupont">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Prénom</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" name="firstName" placeholder="Philippe">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
 
 
 <!-- Insertion du footer. -->
