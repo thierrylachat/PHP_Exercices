@@ -15,7 +15,7 @@
 
 <!-- Affichage de l'index 59 du tableau. -->
 
-<p> <?= $departments[59] ;?> </p>
+<p> Le département n°59 est : <strong><?= $departments[59] ;?></strong>. </p>
 
 
 <!-- Insertion du footer. -->

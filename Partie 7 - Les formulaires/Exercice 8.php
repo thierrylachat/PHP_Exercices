@@ -13,13 +13,13 @@
 
 <?php 
     $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-    $arrlength = count($months);
+    $arrlength = count($months)-1;
 ?>  
 
 
 <!-- Utilisation d'une boucle For pour affichage du tableau. -->
-<?php for ($monthsIndex = 0; $monthsIndex < $arrlength; $monthsIndex++) {
-        echo $months[$monthsIndex] .'<br />';
+<?php for ($x = 0; $x <= $arrlength; $x++) {
+        echo $months[$x] .'<br />';
         } 
 ?>
 

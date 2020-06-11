@@ -9,12 +9,18 @@
 ?>
 
 
-<!-- Report du tableau months. -->
+<!-- Report du tableau months et remplacement du mois "Août". -->
 
 <?php 
     $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
     array_splice($months, 7, 1, "Août");
 ?>    
+
+
+<!-- 2° méthode pour le remplacement du mois de "Août" -->
+<?php 
+$months[3]= "Août";  
+?> 
 
 
 <!-- Affichage du tableau. -->

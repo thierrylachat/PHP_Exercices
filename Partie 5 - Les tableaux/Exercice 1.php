@@ -22,11 +22,11 @@ décembre -->
 ?>
 
 
-<!-- Création du tableau months. -->
+<!-- Création du tableau months de 2 manières -->
 
 <?php 
     $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-    $arrlength = count($months);
+    $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 ?>    
 
 

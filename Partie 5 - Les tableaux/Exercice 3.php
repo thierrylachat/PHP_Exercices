@@ -17,7 +17,7 @@
 
 <!-- Affichage de l'index 3 du tableau. -->
 
-<p> <?= $months[3] ;?> </p>
+<p>La valeur de l'index 5 est <strong><?= $months[3] ;?></strong>.</p>
 
 <!-- Insertion du footer. -->
 

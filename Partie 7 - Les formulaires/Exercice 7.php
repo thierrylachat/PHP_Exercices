@@ -1,23 +1,23 @@
-<!-- Enoncé : avec le tableau de l'exercice 5, afficher toutes les valeurs de ce tableau. -->
+<!-- Enoncé : avec le tableau de l'exercice 5, ajouter la ligne correspondant au département de la ville de Reims. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice 9';
+    $titre= 'Exercice 7';
     include 'header.php';
-    $result;
 ?>
 
 
 <!-- Report du tableau associatif. -->
 
 <?php $departments = array("80"=>"Somme", "60"=>"Oise", "02"=>"Aisne", "62"=>"Pas-De-Calais", "59"=>"Nord"); ?>
+<?php $departments[51] = "Marne"; ?>
 
 
 <!-- Affichage du tableau associatif. -->
-<?php foreach ($departments as $department) {
-    echo $department. '<br>'; }
+<?php foreach ($departments as $element) {
+    echo $element. '<br>'; }
 ?>
 
 

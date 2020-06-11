@@ -17,7 +17,7 @@
 
 <!-- Affichage de la troisième ligne du tableau soit l'index 2 du tableau. -->
 
-<p> La valeur de la troisème ligne est <strong><?= $months[2] ;?></strong>. </p>
+<p> <?= $months[2] ;?> </p>
 
 <!-- Insertion du footer. -->
 

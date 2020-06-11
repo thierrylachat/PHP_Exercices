@@ -16,8 +16,8 @@ Cela pourra être, par exemple, de la forme : Le département + nom du départem
 
 
 <!-- Affichage du tableau associatif. -->
-<?php foreach($departments as $x => $x_value) {
-  echo "Le département " . $x_value . " a le numéro " . $x . "." . "</br>";
+<?php foreach($departments as $departmentNumber => $department) {
+  echo "Le département " . $department . " a le numéro " . $departmentNumber . "." . "</br>";
 }
 ?>
 
