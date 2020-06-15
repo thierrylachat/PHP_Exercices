@@ -15,21 +15,23 @@ Tous les paramètres doivent avoir une valeur par défaut. -->
 <!-- Création de la fonction sum. -->
 
 <?php function sum($x = 5, $y = 12, $z = 20) {
-    return $result = $x + $y+ $z;
+    return $result = $x + $y + $z;
 } ?>
 
 
+<!-- Affichage de la somme des 3 nombres avec appel de la fonction sum. -->
+
+<p><?= sum(); ?></p>
+
+
 <!-- Affichage du nombre de paramètres. -->
+
 <?php function argsNumber() {
     $numArgs = func_num_args();
     echo $numArgs;
 } 
 argsNumber($x = 5, $y = 12, $z = 20); ?>
 
-
-<!-- Affichage de la somme des 3 nombres avec appel de la fonction sum. -->
-
-<p><?= sum(); ?></p>
 
 <!-- Insertion du footer. -->
 

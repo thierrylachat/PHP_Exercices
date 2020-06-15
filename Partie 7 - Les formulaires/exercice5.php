@@ -11,6 +11,9 @@ Vous avez le choix de la méthode.-->
 <?php
     $titre= 'exercice5';
     include 'header.php';
+    $lastNamePost = $_POST['lastName'] ?? '';
+    $firstNamePost = $_POST['firstName'] ?? '';
+    $civilityPost = $_POST['civility'] ?? '';
 ?>
 
 
@@ -41,9 +44,9 @@ Vous avez le choix de la méthode.-->
 
 <!-- Affichage des inputs du formulaire. -->
 <div class="m-4">
-    <p><?php echo $_POST['civility'] ;?></p>
-    <p><?php echo $_POST['lastName'] ;?></p>
-    <p><?php echo $_POST['firstName'] ;?></p>
+    <p><?php echo trim(htmlspecialchars($civilityPost)) ;?></p>
+    <p><?php echo trim(htmlspecialchars($lastNamePost)) ;?></p>
+    <p><?php echo trim(htmlspecialchars($firstNamePost)) ;?></p>
 </div>
 
 
