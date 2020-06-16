@@ -1,4 +1,4 @@
-<!-- Enoncé : afficher le nombre de jour qui sépare la date du jour avec le 16 mai 2016.-->
+<!-- Enoncé : afficher le nombre de jours qui sépare la date du jour avec le 16 mai 2016.-->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
@@ -19,7 +19,7 @@
    
 <!-- Affichage de l'écart de jours. -->
 
-<div>L'écart de jours entre aujourd'hui et le 16 Mai 2016 : <strong><?= $interval -> format('%R%a jours'); ?></strong></div>
+<div>L'écart de jours entre aujourd'hui et le 16 Mai 2016 : <strong><?= $interval -> format('%R%a jours'); ?></strong>.</div>
 
 
 <!-- Insertion du footer. -->
