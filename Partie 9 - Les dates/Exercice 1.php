@@ -10,7 +10,7 @@ Afficher la date courante en respectant la forme jj/mm/aaaa (ex : 16/05/2016). -
 ?>
 
 
-<!-- Affichage de la date courante. -->
+<!-- Création des variables dates. -->
 
 <?php
 
@@ -24,6 +24,9 @@ Afficher la date courante en respectant la forme jj/mm/aaaa (ex : 16/05/2016). -
     // Possibilité 3
     $date_slash_3 = date_create(); // ex 1
 ?>
+
+
+<!-- Affichage des variables dates. -->
 
 <div>Date du jour (methode date()): <strong><?= $date_slash; ?></strong></div>
 <div>Date du jour (methode DateTime()) : <strong><?= $date_slash_2 -> format('d/m/Y'); ?></strong></div>
