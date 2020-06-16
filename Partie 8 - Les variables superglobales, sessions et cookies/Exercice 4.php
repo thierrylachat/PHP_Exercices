@@ -1,4 +1,5 @@
-<!-- Enoncé : avec le formulaire de l'exercice 2, afficher dans la page user.php les données du formulaire transmises. -->
+<!-- Enoncé : 
+Faire une page qui va récupérer les informations du cookie créé à l'exercice 3 et qui les affiche. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -8,7 +9,7 @@
     include 'header.php';
 ?>
 
-<p>Cf. l'exercice 2.</p>
+
 
 <!-- Insertion du footer. -->
 
