@@ -1,5 +1,4 @@
-<!-- Enoncé : 
-Afficher la date courante en respectant la forme jj/mm/aaaa (ex : 16/05/2016). -->
+<!-- Enoncé : afficher la date courante en respectant la forme jj/mm/aaaa (ex : 16/05/2016). -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->

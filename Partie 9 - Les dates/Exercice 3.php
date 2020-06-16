@@ -36,13 +36,15 @@ Bonus : Le faire en français. -->
     $date_traduite = dateFR($date_letters);
 ?>
 
-<h1>Exercice 3</h1>
-    <div>Date du jour (en lettre, date_format()) : <strong><?= date_format($date_letters, 'l d F Y'); ?></strong></div>
-    <!-- autre méthode -->
-    <div>Date du jour (en lettre, date()) : <strong><?= date('l d F Y'); ?></strong></div>
-    <!-- Bonus -->
-    <div>Date traduite (strftime) : <strong><?= strftime("%A %e %B %Y", time()); ?></strong></div>
-    <div>Date traduite : <strong><?= $date_traduite ?></strong></div>
+
+<div>Date du jour (en lettres, date_format()) : <strong><?= date_format($date_letters, 'l d F Y'); ?></strong></div>
+<!-- autre méthode -->
+<div>Date du jour (en lettres, date()) : <strong><?= date('l d F Y'); ?></strong></div>
+
+<!-- Bonus -->
+<div>Date traduite (strftime) : <strong><?= strftime("%A %e %B %Y", time()); ?></strong></div>
+<div>Date traduite : <strong><?= $date_traduite ?></strong></div>
+
 
 <!-- Insertion du footer. -->
 
