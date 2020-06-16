@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice 1">Exercice 1<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../Exercice 1">Exercice 1</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Exercice 2">Exercice 2</a>
