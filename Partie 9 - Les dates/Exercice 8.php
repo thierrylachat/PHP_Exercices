@@ -1,4 +1,4 @@
-<!-- Enoncé : avec le tableau de l'exercice 1 et une boucle, afficher toutes les valeurs de ce tableau. -->
+<!-- Enoncé : afficher la date du jour - 22 jours -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
@@ -9,19 +9,19 @@
 ?>
 
 
-<!-- Création du tableau months. -->
-
-<?php 
-    $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
-    $arrlength = count($months)-1;
-?>  
-
-
-<!-- Utilisation d'une boucle For pour affichage du tableau. -->
-<?php for ($x = 0; $x <= $arrlength; $x++) {
-        echo $months[$x] .'<br />';
-        } 
+<?php
+    
+    // Retour arrière de 22 jours.
+    $before = strtotime('- 22 days');
+    // Autre methode.
+    $before2 = new DateTime();
+    $before2 -> sub(new DateInterval('P22D'));
 ?>
+
+
+<!-- Affichage de la date du jour - 22 jours. -->
+<div>Il y a 22 jours nous étions le <strong><?= date('d/m/Y', $before) ?></strong>.</div>
+<div>Il y a 22 jours nous étions le <strong><?= $before2 -> format("d-m-Y") ?></strong>.</div>
 
 
 <!-- Insertion du footer. -->
