@@ -1,5 +1,4 @@
-<!-- Enoncé : 
-Afficher le nombre de jour qui sépare la date du jour avec le 16 mai 2016.-->
+<!-- Enoncé : afficher le nombre de jour qui sépare la date du jour avec le 16 mai 2016.-->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 

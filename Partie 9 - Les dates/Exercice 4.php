@@ -19,12 +19,15 @@ Afficher le timestamp du mardi 2 août 2016 à 15h00. -->
     // voir mktime() pour soluce 3.
 ?>
 
+<!-- Affichage du timestamp du jour -->
+<div>Date du jour (timestamp, time()) : <strong><?= $timestamp1; ?></strong></div>
+<div>Date du jour (autre methode, strtotime()) : <strong><?= $timestamp2; ?></strong></div>
 
-    <div>Date du jour (timestamp, time()) : <strong><?= $timestamp1; ?></strong></div>
-    <div>Date du jour (autre methode, strtotime()) : <strong><?= $timestamp2; ?></strong></div>
+<!-- Affichagr du timestamp du mardi 2 août 2016. -->
+<div>Mardi 2 Août 2016 à 15h00 : <strong><?= strtotime("Tuesday 2 August 2016 15 hours") ?></strong></div>
 
-    <div>Mardi 2 Août 2016 à 15h00 : <strong><?= strtotime("Tuesday 2 August 2016 15 hours") ?></strong></div>
-    <div>Dans 5 jours : <strong><?= strftime('%A', strtotime('+ 5 days')) ?></strong></div>
+<!-- Affichage du jour correspondant à dans 5 jours. -->
+<div>Dans 5 jours : <strong><?= strftime('%A', strtotime('+ 5 days')) ?></strong></div>
 
 
 <!-- Insertion du footer. -->
