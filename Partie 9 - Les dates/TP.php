@@ -1,5 +1,6 @@
 <!-- Enoncé : création d'un calendrier. -->
 
+<!-- Tuto : https://css-tricks.com/snippets/php/build-a-calendar-table/#usage -->
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
