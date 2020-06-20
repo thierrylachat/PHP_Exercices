@@ -15,9 +15,9 @@
     $months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
 ?>    
 
-<!-- Affichage de l'index 3 du tableau. -->
+<!-- Affichage de l'index 5 du tableau. -->
 
-<p>La valeur de l'index 5 est <strong><?= $months[3] ;?></strong>.</p>
+<p>La valeur de l'index 5 est <strong><?= $months[5] ;?></strong>.</p>
 
 <!-- Insertion du footer. -->
 
