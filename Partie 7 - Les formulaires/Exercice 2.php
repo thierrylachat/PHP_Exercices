@@ -16,12 +16,12 @@ Ce formulaire doit rediriger vers la page user.php avec la méthode POST. -->
     <form method="post" action="user.php">
         <p class="font-weight-bold text-center text-uppercase">Formulaire de contact</p>
         <div class="form-group">
-            <label for="formGroupExampleInput">Nom</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="lastName" placeholder="Dupont">
+            <label for="lastName">Nom</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Dupont">
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Prénom</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="firstName" placeholder="Philippe">
+            <label for="firstName">Prénom</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Philippe">
         </div>
         <button type="submit" class="btn btn-success">Valider</button>
     </form>
