@@ -6,17 +6,19 @@
 <?php
     $titre= 'Exercice 3';
     include 'header.php';
-    $lastName = $_GET['lastName'] ?? '';
-    $firstName = $_GET['firstName'] ?? '';
+    $lastNameGet = $_GET['lastName'] ?? '';
+    $firstNameGet = $_GET['firstName'] ?? '';
     $lastNamePost = $_POST['lastName'] ?? '';
     $firstNamePost = $_POST['firstName'] ?? '';
 ?>
 
 
-<!-- Affichage des données lastName et firstName avec la méthode GET. -->
+<!-- Affichage des données lastName et firstName avec la méthode GET et POST. -->
+<!-- Protection des données transmises via htmlspecialchars et strip_tags : 
+https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/913099-transmettez-des-donnees-avec-les-formulaires -->
 
-<p><?php echo trim(htmlspecialchars($lastName)) ;?></p>
-<p><?php echo trim(htmlspecialchars($firstName)) ;?></p>
+<p><?php echo trim(htmlspecialchars($lastNameGet)) ;?></p>
+<p><?php echo trim(htmlspecialchars($firstNameGet)) ;?></p>
 <p><?php echo trim(strip_tags($lastNamePost)) ;?></p>
 <p><?php echo trim(strip_tags($firstNamePost)) ;?></p>
 
