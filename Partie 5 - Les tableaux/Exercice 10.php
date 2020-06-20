@@ -12,7 +12,7 @@ include 'header.php';
 
 <!-- Création du tableau associatif. -->
 
-<?php $departments = array("80" => "Somme", "60" => "Oise", "02" => "Aisne", "62" => "Pas-De-Calais", "59" => "Nord");?>
+<?php $departments = array("80" => "Somme", "60" => "Oise", "02" => "Aisne", "62" => "Pas-De-Calais", "59" => "Nord") ;?>
 
 
 <!-- Affichage du tableau associatif. -->
@@ -40,8 +40,8 @@ include 'header.php';
                 <?php
                 foreach ($departments as $departmentNumber => $department) { ;?>
                 <tr>
-                    <td><?=$departmentNumber?></td>
-                    <td><?=$department?></td>
+                    <td> <?=$departmentNumber ;?> </td>
+                    <td> <?=$department ;?> </td>
                 </tr>
                 <?php } ;?>
 
