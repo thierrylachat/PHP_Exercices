@@ -1,12 +1,12 @@
-<!-- Enoncé : créer un formulaire demandant le nom et le prénom. 
+<!-- Enoncé : créer un formulaire demandant le nom et le prénom.
 Ce formulaire doit rediriger vers la page user.php avec la méthode POST. -->
 
 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice 2';
-    include 'header.php';
+$titre = 'Exercice 2';
+include 'header.php';
 ?>
 
 
@@ -30,4 +30,4 @@ Ce formulaire doit rediriger vers la page user.php avec la méthode POST. -->
 
 <!-- Insertion du footer. -->
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
