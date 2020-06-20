@@ -16,6 +16,8 @@ N'utiliser qu'une seule page. -->
     <div class="m-4 p-4 col-4 border border-secondary">
     <form method="post" action="exercice6.php">
         <p class="font-weight-bold text-center text-uppercase">Formulaire de contact</p>
+
+        <!-- Affichage de la civilité.  -->
         <div class="form-group">
             <select class="custom-select" name="civility">
                 <option value='' disabled="disabled" selected="selected" hidden="hidden">Civilité</option>
@@ -23,14 +25,17 @@ N'utiliser qu'une seule page. -->
                 <option value="Madame">Mme</option>
             </select>
         </div>
+        <!-- Affichage du nom.  -->
         <div class="form-group">
             <label for="formGroupExampleInput">Nom</label>
             <input type="text" class="form-control" id="formGroupExampleInput" name="lastName" placeholder="Dupont">
         </div>
+        <!-- Affichage du prénom.  -->
         <div class="form-group">
             <label for="formGroupExampleInput2">Prénom</label>
             <input type="text" class="form-control" id="formGroupExampleInput2" name="firstName" placeholder="Philippe">
         </div>
+        <!-- Affichage de l'âge.  -->
         <div class="form-group">
             <label for="formGroupExampleInput2">Age</label>
             <input type="text" class="form-control" id="formGroupExampleInput2" name="age" placeholder="33">
