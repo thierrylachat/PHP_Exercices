@@ -11,7 +11,7 @@ include 'header.php';
 <!-- Création du tableau associatif. -->
 
 <?php $departments = array("80" => "Somme", "60" => "Oise", "02" => "Aisne", "62" => "Pas-De-Calais", "59" => "Nord") ;?>
-<?php $departments = ['02' => 'Aisne', '59' =>'Nord', '60' => 'Oise', '80' => 'Somme', '62' => 'Pas-de-calais'] ;?>
+<?php $departments = ['02' => 'Aisne', '59' => 'Nord', '60' => 'Oise', '80' => 'Somme', '62' => 'Pas-de-calais'] ;?>
 
 
 <!-- Affichage du tableau. -->
