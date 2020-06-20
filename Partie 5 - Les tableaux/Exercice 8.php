@@ -22,34 +22,36 @@ $arrlength = count($months);
     echo $months[$monthsIndex] . '<br />';
 }; ?>
 
+<br>
 
 <!-- Affichage sous la forme d'un tableau. -->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <table class="table table-bordered table-striped">
-                <thead class="bg-info">
-                    <tr>
-                        <th>N° Mois</th>
-                        <th>Nom du mois</th>
-                    </tr>
-                </thead>
-                <tbody>
-                
-                    <?php
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-bordered table-striped">
+            <thead class="bg-info">
+                <tr>
+                    <th>N° Mois</th>
+                    <th>Nom du mois</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
                     $limit = count($months);
                     for ($monthsIndex = 0; $monthsIndex < $limit; $monthsIndex++) {?>
-                    <tr>
-                        <td> <?= $monthsIndex + 1 ;?> </td>
-                        <td> <?= $months[$monthsIndex] ;?> </td>
-                    </tr>
-                    <?php 
+                <tr>
+                    <td> <?= $monthsIndex + 1 ;?> </td>
+                    <td> <?= $months[$monthsIndex] ;?> </td>
+                </tr>
+                <?php 
                     }; ?>
 
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 
 <!-- Insertion du footer. -->
