@@ -13,8 +13,8 @@ include 'header.php';
 
 <!-- Test et affichage des paramètres name et firstname de l'URL. -->
 
-<p> <?= $_GET['lastname'] ;?></p>
-<p> <?= $_GET["firstname"] ;?></p>
+<p> <?= $_GET['lastname'] ;?> </p>
+<p> <?= $_GET["firstname"] ;?> </p>
 
 
 <!-- Insertion du footer. -->
