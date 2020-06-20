@@ -3,14 +3,14 @@
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice5';
-    include 'header.php';
+$titre= 'Exercice5';
+include 'header.php';
 ?>
 
 
 <!-- Test et affichage du paramètre week de l'URL. -->
 
-<p> <?= $_GET["week"]; ?></p>
+<p> <?= $_GET["week"]; ?> </p>
 
 
 <!-- Insertion du footer. -->

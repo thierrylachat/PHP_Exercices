@@ -12,8 +12,8 @@ include 'header.php';
 
 <!-- Test et affichage des paramètres name et firstname de l'URL. -->
 
-<p> <?= $_GET["language"] ;?></p>
-<p> <?= $_GET["server"] ;?></p>
+<p> <?= $_GET["language"] ;?> </p>
+<p> <?= $_GET["server"] ;?> </p>
 
 
 <!-- Insertion du footer. -->
