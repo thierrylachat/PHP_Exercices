@@ -4,16 +4,15 @@ N'utiliser qu'une seule page. -->
 <?php
 $titre = 'Exercice6';
 include 'header.php';
-$message;
 ?>
 
 
 <!-- Création de la condition d'affichage des données. -->
 
-<?php if (!empty($_POST['civility']) && !empty($_POST['lastName']) && !empty($_POST['firstName'] && !empty($_POST['age']))) {?>
+<?php if (!empty($_POST['civility']) && !empty($_POST['lastName']) && !empty($_POST['firstName']) && !empty($_POST['age'])) { ;?>
 <p>Les données du formulaire sont : <?php echo ($_POST['civility']); ?>, <?php echo ($_POST['lastName']); ?>,
     <?php echo ($_POST['firstName']); ?>, et <?php echo ($_POST['age']); ?>. </p>
-<?php } else {?>
+<?php } else { ;?>
 
 <div class="m-4 p-4 col-4 border border-secondary">
     <form method="post" action="exercice6.php">
@@ -45,7 +44,7 @@ $message;
         <button type="submit" class="btn btn-success">Valider</button>
     </form>
 </div>
-<?php }?>
+<?php } ;?>
 
 
 <!-- Insertion du footer. -->
