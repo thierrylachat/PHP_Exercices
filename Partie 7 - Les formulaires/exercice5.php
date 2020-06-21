@@ -43,6 +43,7 @@ $civilityPost = $_POST['civility'] ?? '';
 
 
 <!-- Affichage des inputs du formulaire. -->
+
 <div class="m-4">
     <p><?php echo trim(htmlspecialchars($civilityPost)); ?></p>
     <p><?php echo trim(htmlspecialchars($lastNamePost)); ?></p>

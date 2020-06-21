@@ -1,19 +1,21 @@
-<!-- Enoncé : avec le formulaire de l'exercice 5, si des données sont passées en POST ou en GET, le formulaire ne doit pas être affiché. Par contre les données transmises doivent l'être. Dans le cas contraire, c'est l'inverse.  
+<!-- Enoncé : avec le formulaire de l'exercice 5, si des données sont passées en POST ou en GET, le formulaire ne doit pas être affiché. Par contre les données transmises doivent l'être. Dans le cas contraire, c'est l'inverse.
 N'utiliser qu'une seule page. -->
 
 <?php
-    $titre= 'Exercice6';
-    include 'header.php';
-    $message;
+$titre = 'Exercice6';
+include 'header.php';
+$message;
 ?>
 
 
 <!-- Création de la condition d'affichage des données. -->
 
-<?php if (!empty($_POST['civility']) && !empty($_POST['lastName']) && !empty($_POST['firstName'] && !empty($_POST['age']))) { ?>
-    <p>Les données du formulaire sont : <?php echo ($_POST['civility']) ;?>; <?php echo ($_POST['lastName']) ;?>; <?php echo ($_POST['firstName']) ;?>; </p>
-<?php } else { ?>
-    <div class="m-4 p-4 col-4 border border-secondary">
+<?php if (!empty($_POST['civility']) && !empty($_POST['lastName']) && !empty($_POST['firstName'] && !empty($_POST['age']))) {?>
+<p>Les données du formulaire sont : <?php echo ($_POST['civility']); ?>, <?php echo ($_POST['lastName']); ?>,
+    <?php echo ($_POST['firstName']); ?>, et <?php echo ($_POST['age']); ?>. </p>
+<?php } else {?>
+
+<div class="m-4 p-4 col-4 border border-secondary">
     <form method="post" action="exercice6.php">
         <p class="font-weight-bold text-center text-uppercase">Formulaire de contact</p>
 
@@ -27,25 +29,25 @@ N'utiliser qu'une seule page. -->
         </div>
         <!-- Affichage du nom.  -->
         <div class="form-group">
-            <label for="formGroupExampleInput">Nom</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="lastName" placeholder="Dupont">
+            <label for="lastName">Nom</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Dupont">
         </div>
         <!-- Affichage du prénom.  -->
         <div class="form-group">
-            <label for="formGroupExampleInput2">Prénom</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="firstName" placeholder="Philippe">
+            <label for="firstName">Prénom</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Philippe">
         </div>
         <!-- Affichage de l'âge.  -->
         <div class="form-group">
-            <label for="formGroupExampleInput2">Age</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="age" placeholder="33">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age" name="age" placeholder="33">
         </div>
         <button type="submit" class="btn btn-success">Valider</button>
     </form>
 </div>
-<?php } ?>
+<?php }?>
 
 
 <!-- Insertion du footer. -->
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
