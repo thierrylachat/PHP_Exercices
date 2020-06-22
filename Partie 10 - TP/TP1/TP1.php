@@ -26,6 +26,18 @@ A la validation de ces informations, il faudra les afficher dans la même page �
     include 'header.php';
 ?>
 
+<?php 
+
+// Déclaration des REGEX.
+// Date : année - mois - jour.
+$regexBirthday = '/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/';
+// Téléphone : (+33) 06/07... xx xx xx xx
+$regexPhone = '/^(\+33|0)[1-79][0-9]{8}$/';
+$regexAddress = "/^[A-Z0-9,éèêâôûüï'\- ]+$/i";
+$regexZipCode = '/^((2A|2B)|[0-9]{5})$/';
+$regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
+
+?>
 
 <!-- Création du titre du formulaire. -->
 <h1 class="m-4 p-4 font-weight-bold h3">Formulaire d'enregistrement pour nouvel apprenant</h1>
