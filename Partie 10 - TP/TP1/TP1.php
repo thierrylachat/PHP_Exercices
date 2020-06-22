@@ -34,8 +34,147 @@ $regexBirthday = '/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/';
 // Téléphone : (+33) 06/07... xx xx xx xx
 $regexPhone = '/^(\+33|0)[1-79][0-9]{8}$/';
 $regexAddress = "/^[A-Z0-9,éèêâôûüï'\- ]+$/i";
-$regexZipCode = '/^((2A|2B)|[0-9]{5})$/';
+$regexPostCode = '/^((2A|2B)|[0-9]{5})$/';
 $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
+
+// Validation du formulaire.
+$isSubmitted = false;
+
+// Création des variables.
+$civility= ''; $firstName=''; $lastName=''; $birthday='';
+$country=''; $nationality=''; $address=''; $postcode=''; $city='';
+$email=''; $phone=''; $degrees=''; $jobNumber='';
+$badgeNumber=''; $codeAcademyURL=''; $textHero=''; $textHacks=''; $skills='';
+$errors = [];
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $isSubmitted = true;
+}
+
+// Nettoyage des variables, vérification que les variables sont remplies et qu'elles correspondent aux REGEX.
+
+// Civilité.
+$civility= trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
+if (empty($civility)){
+        $errors['civility'] = 'Merci d\'indiquer votre civilité.';
+} 
+
+// Prénom.
+$firstName = trim(filter_input(INPUT_POST,'firstName', FILTER_SANITIZE_STRING));
+if (empty($firstName)) {
+    $errors['firstName'] = 'Merci de renseigner votre prénom.';
+} elseif (!preg_match($regexNames,$firstName)) {
+    $errors['firstName'] = 'Le format attendu n\'est pas respecté';
+}
+
+// Nom.
+$lastName = trim(filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_STRING));
+if (empty($lastName)) {
+    $errors['lastName'] = 'Merci de renseigner votre nom.';
+} elseif (!preg_match($regexNames,$lastName)) {
+    $errors['lastName'] = 'Le format attendu n\'est pas respecté';
+}
+
+// Date de naissance.
+$birthday= trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
+if (empty ($birthday)){
+        $errors['birthday'] = 'Merci de renseigner votre date de naissance.';
+} elseif (!preg_match($regexBirthday,$birthday)) {
+        $errors['birthday'] = 'Le format attendu n\'est pas respecté.';
+}
+
+// Pays de naissance.
+$country= trim(filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING));
+if (empty($country)){
+        $errors['country'] = 'Merci d\'indiquer votre pays de naissance.';
+} 
+
+// Nationalité.
+$nationality= trim(filter_input(INPUT_POST, 'nationality', FILTER_SANITIZE_STRING));
+if (empty($nationality)){
+        $errors['nationality'] = 'Merci d\'indiquer votre nationalité.';
+} 
+
+// Numéro de téléphone.
+$phone= trim(filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING));
+if (empty ($phone)){
+        $errors['phone'] = 'Merci de renseigner correctement votre numéro de téléphone.';
+} elseif (!preg_match($regexPhone,$phone)) {
+        $errors['phone'] = 'Le format attendu n\'est pas respecté.';
+}
+
+// Adresse email.
+$email= trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
+if (empty ($mail)){
+        $errors['email'] = 'Merci de renseigner correctement votre adresse électronique.';
+} elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Le format attendu n\'est pas respecté.';
+}
+
+// Adresse.
+$address= trim(filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING));
+if (empty ($address)){
+        $errors['address'] = 'Merci de renseigner une adresse.';
+} elseif (!preg_match($regexAddress,$address)) {
+        $errors['address'] = 'Le format attendu n\'est pas respecté.';
+}
+
+// Code postal.
+$postcode= trim(filter_input(INPUT_POST, 'postcode', FILTER_SANITIZE_STRING));
+if (empty ($postcode)){
+        $errors['postcode'] = 'Merci de renseigner votre code postal.';
+} elseif (!preg_match($regexPostCode,$postcode)) {
+        $errors['postcode'] = 'Le format attendu n\'est pas respecté.';
+}
+
+// Ville.
+$city= trim(filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING));
+    if (empty ($city)){
+        $errors['city'] = 'Merci de renseigner votre nom de ville.';
+} elseif (!preg_match($regexNames,$city)) {
+        $errors['city'] = 'Le format attendu n\'est pas respecté.';
+}
+
+// Numéro de Pôle Emploi.
+$jobNumber= trim(filter_input(INPUT_POST, 'jobNumber', FILTER_SANITIZE_STRING));
+if (empty($jobNumber)){
+        $errors['jobNumber'] = 'Merci de renseigner votre identifiant.';
+}
+
+// Diplômes.
+$degrees= trim(filter_input(INPUT_POST, 'degrees', FILTER_SANITIZE_STRING));
+if (empty($degrees)){
+        $errors['degrees'] = 'Merci de selectioner votre diplôme.';
+}
+
+// Badges.
+$badgeNumber= trim(filter_input(INPUT_POST, 'badgeNumber', FILTER_SANITIZE_STRING));
+if (empty($badgeNumber)){
+        $errors['badgeNumber'] = 'Merci d\'indiquer votre nombre de badges.';
+} 
+
+// Code academy.
+$codeAcademyURL= trim(filter_input(INPUT_POST, 'codeAcademyURL', FILTER_SANITIZE_STRING));
+if (empty($codeAcademyURL)){
+        $errors['codeAcademyURL'] = 'Merci d\'indinquer votre lien Codecademy.';
+} elseif (!filter_var($codeAcademyURL, FILTER_VALIDATE_URL)) {
+        $errors['codeAcademyURL'] = 'Merci d\'indinquer votre lien Codecademy valide.';
+}
+
+// Hacks.
+$textHacks = trim(filter_input(INPUT_POST, 'textHacks', FILTER_SANITIZE_STRING));
+
+// Héros.
+$textHero = trim(filter_input(INPUT_POST, 'textHero', FILTER_SANITIZE_STRING));
+
+// Expérience de programmation.
+$skills = trim(filter_input(INPUT_POST, 'skills', FILTER_SANITIZE_STRING));
+
+// Utilisation de isset et non de empty pour les checkbox pour vérifier que la checkbox a été sélectionnée.
+if (!isset($skills)){
+    $errors['skills'] = 'Merci de cocher un choix.';
+}
+var_dump($errors);
 
 ?>
 
@@ -56,18 +195,21 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                     <option value="Monsieur">Mr</option>
                     <option value="Madame">Mme</option>
                 </select>
+                <p class="error text-danger"><?= $errors['civility'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du nom.  -->
             <div class="form-group m-3 col-3">
                 <label for="lastName">Nom</label>
                 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Dupont">
+                <p class="error text-danger"><?= $errors['lastName'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du prénom.  -->
             <div class="form-group m-3 col-3">
                 <label for="firstName">Prénom</label>
                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Philippe">
+                <p class="error text-danger"><?= $errors['firstName'] ?? '' ?></p>
             </div>
         </div>
 
@@ -76,6 +218,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
             <div class="form-group col-3">
                 <label for="birthday">Date de naissance</label>
                 <input type="date" class="form-control" id="birthday" name="birthday" placeholder="26/01/1967">
+                <p class="error text-danger"><?= $errors['birthday'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du pays de naissance.  -->
@@ -312,6 +455,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                     <option value="Zambie">Zambie </option>
                     <option value="Zimbabwe">Zimbabwe </option>
                 </select>
+                <p class="error text-danger"><?= $errors['country'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la nationalité.  -->
@@ -516,6 +660,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                     <option value="ZMB">Zambienne (Zambie)</option>
                     <option value="ZWE">Zimbabwéenne (Zimbabwe)</option>
                 </select>
+                <p class="error text-danger"><?= $errors['nationality'] ?? '' ?></p>
             </div>
         </div>
 
@@ -525,20 +670,23 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
         <div class="row justify-content-around">
             <!-- Affichage de l'adresse.  -->
             <div class="form-group col-3">
-                <label for="adress">Adresse</label>
-                <input type="text" class="form-control" id="adress" name="adress" placeholder="18 Rue Louis Braille">
+                <label for="address">Adresse</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="18 Rue Louis Braille">
+                <p class="error text-danger"><?= $errors['address'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du code postal.  -->
             <div class="form-group col-3">
                 <label for="postcode">Code postal</label>
                 <input type="number" class="form-control" id="postcode" name="postcode" placeholder="75008">
+                <p class="error text-danger"><?= $errors['postcode'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la ville.  -->
             <div class="form-group col-3">
                 <label for="city">Ville</label>
                 <input type="text" class="form-control" id="city" name="city" placeholder="Paris">
+                <p class="error text-danger"><?= $errors['city'] ?? '' ?></p>
             </div>
 
         </div>
@@ -551,12 +699,14 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email"
                     placeholder="philippe.dupont@gmail.com">
+                <p class="error text-danger"><?= $errors['email'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du numéro de téléphone.  -->
             <div class="form-group col-4">
                 <label for="phone">Numéro de téléphone</label>
                 <input type="tel" class="form-control" id="phone" name="phone" placeholder="06.49.58.74.63">
+                <p class="error text-danger"><?= $errors['phone'] ?? '' ?></p>
             </div>
         </div>
 
@@ -573,6 +723,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                     <option value="Bac+2">Bac+2</option>
                     <option value="Bac+3 ou supérieur">Bac+3 ou supérieur</option>
                 </select>
+                <p class="error text-danger"><?= $errors['degrees'] ?? '' ?></p>
             </div>
 
 
@@ -580,6 +731,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
             <div class="form-group col-4">
                 <label for="jobNumber">Numéro pôle emploi</label>
                 <input type="text" class="form-control" id="jobNumber" name="jobNumber" placeholder="359945F">
+                <p class="error text-danger"><?= $errors['jobNumber'] ?? '' ?></p>
             </div>
 
         </div>
@@ -599,6 +751,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
+                <p class="error text-danger"><?= $errors['badgeNumber'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du lien code academy  -->
@@ -606,6 +759,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                 <label for="codeAcademyURL">Lien vers Code Academy</label>
                 <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL"
                     placeholder="www.codeAcademyURL.fr">
+                <p class="error text-danger"><?= $errors['codeAcademyURL'] ?? '' ?></p>
             </div>
 
         </div>
@@ -619,19 +773,28 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
                 <label for="textHero">Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi
                     ?</label>
                 <textarea name="textHero" id="textHero" cols="50" rows="5"></textarea>
+                <p class="error text-danger"><?= $errors['textHero'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la question sur le hack.  -->
             <div class="form-group col-3 mt-4">
                 <label for="textHacks">Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)</label>
                 <textarea name="textHacks" id="textHacks" cols="50" rows="5"></textarea>
+                <p class="error text-danger"><?= $errors['textHacks'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la question sur l'expérience en programmation.  -->
             <div class="form-group col-3">
-                <label for="textExperience">Avez vous déjà eu une expérience avec la programmation et/ou l'informatique
-                    avant de remplir ce formulaire ?</label>
-                <textarea name="textExperience" id="textExperience" cols="50" rows="5"></textarea>
+                <div class="checkboxContainer">
+                    <p>Avez-vous déjà eu une experience avec la programmation et/ou l'informatique avant de remplir ce
+                        formulaire?
+                    </p>
+                    <label for="yes">OUI</label>
+                    <input type="radio" id="yes" name="skills" value="yes" <?= $skills == 'yes' ? 'checked' : '' ?>>
+                    <label for="no">NON</label>
+                    <input type="radio" id="no" name="skills" value="no" <?= $skills == 'no' ? 'checked' : '' ?>>
+                    <span class="error text-danger"><?= $errors['skills'] ?? '' ?></span>
+                </div>
             </div>
 
         </div>
