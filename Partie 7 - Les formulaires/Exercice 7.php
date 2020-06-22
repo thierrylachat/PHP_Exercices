@@ -43,6 +43,41 @@ var_dump ($file);
     </form>
 </div>
 
+<?php include 'header.php';
+
+if ((!empty($_POST['civil'])) && (!empty($_POST['prenom'])) && (!empty($_POST['nom'])) && (!empty($_FILES['file']))) {?>
+ <p><?= $_POST['civil'].' '.$_POST['prenom'].' '.$_POST['nom'].' vous avez envoyé le fichier '.$_FILES['file']['name']; ?></p>
+<?php } else {?>
+<form action='exercice 7.php' class="form-inline mt-5" method="POST" enctype="multipart/form-data">
+<div class="form-group mb-2 mr-2">
+    <select class="custom-select mr-2 ml-2" name="civil" required="required">
+    <option value="" disabled = "disabled" selected ="selected" hidden= "hidden">civilité</option>
+            <option value="Monsieur" required="required">Mr</option>
+      <option value="Madame" required="required">Mme</option>
+    </select>
+ 
+  <label class="sr-only" for="inlineFormInputName2">nom</label>
+  <input type="text" class="form-control  mr-sm-2" id="inlineFormInputName2" placeholder="Nom" name="nom">
+
+  <label class="sr-only" for="inlineFormInputGroupUsername2">prénom</label>
+  <div class="input-group mr-sm-2">
+    <div class="input-group-prepend">
+      
+    </div>
+    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Prénom" name="prenom">
+  </div>
+</div>
+<div class="form-group mb-2">
+      <label  for="exampleInputFile"></label>
+      <input  type="file" class="form-control-file" id="file" name="file">
+      <small id="fileHelp" class="form-text text-muted "></small>
+    </div>
+
+  <button type="submit" class="btn btn-success mb-2">Envoyer!</button>
+</form>
+<?php } ?>
+<?php include 'footer.php' ?>
+
 
 <!-- Affichage des inputs du formulaire. -->
 <div class="m-4">

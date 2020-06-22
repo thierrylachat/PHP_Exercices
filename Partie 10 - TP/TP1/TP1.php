@@ -535,77 +535,98 @@ A la validation de ces informations, il faudra les afficher dans la même page �
         <div class="row justify-content-around">
 
             <!-- Affichage de l'adresse mail.  -->
-            <div class="form-group col-3">
+            <div class="form-group col-4">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email"
                     placeholder="philippe.dupont@gmail.com">
             </div>
 
             <!-- Affichage du numéro de téléphone.  -->
-            <div class="form-group col-3">
+            <div class="form-group col-4">
                 <label for="phone">Numéro de téléphone</label>
                 <input type="tel" class="form-control" id="phone" name="phone" placeholder="06.49.58.74.63">
             </div>
         </div>
 
-        <!-- Affichage du niveau de diplôme.  -->
-        <div class="form-group">
-            <label for="degrees">Niveau de diplôme</label>
-            <select class="custom-select" name="degrees">
-                <option value="Sans diplôme" selected="selected">Sans diplôme</option>
-                <option value="Bac">Bac</option>
-                <option value="Bac+2">Bac+2</option>
-                <option value="Bac+3 ou supérieur">Bac+3 ou supérieur</option>
-            </select>
+
+        <h2 class="h4 m-3">Diplômes</h2>
+        <div class="row justify-content-around">
+
+            <!-- Affichage du niveau de diplôme.  -->
+            <div class="form-group col-4">
+                <label for="degrees">Niveau de diplôme</label>
+                <select class="custom-select" name="degrees">
+                    <option value="Sans diplôme" selected="selected">Sans diplôme</option>
+                    <option value="Bac">Bac</option>
+                    <option value="Bac+2">Bac+2</option>
+                    <option value="Bac+3 ou supérieur">Bac+3 ou supérieur</option>
+                </select>
+            </div>
+
+
+            <!-- Affichage du numéro de pôle emploi (7 chiffres suivis d'une lettre)  -->
+            <div class="form-group col-4">
+                <label for="jobNumber">Numéro pôle emploi</label>
+                <input type="text" class="form-control" id="jobNumber" name="jobNumber" placeholder="359945F">
+            </div>
+
         </div>
 
 
-        <!-- Affichage du numéro de pôle emploi (7 chiffres suivis d'une lettre)  -->
-        <div class="form-group">
-            <label for="jobNumber">Numéro pôle emploi</label>
-            <input type="text" class="form-control" id="jobNumber" name="jobNumber" placeholder="359945F">
+        <h2 class="h4 m-3">Apprentissage</h2>
+        <div class="row justify-content-around">
+
+            <!-- Nombre de badges  -->
+            <div class="form-group col-4">
+                <label for="badgeNumber">Nombre de badges</label>
+                <select class="custom-select" name="badgeNumber">
+                    <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <!-- Affichage du lien code academy  -->
+            <div class="form-group col-4">
+                <label for="codeAcademyURL">Lien vers Code Academy</label>
+                <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL"
+                    placeholder="www.codeAcademyURL.fr">
+            </div>
+
         </div>
 
-        <!-- Nombre de badges  -->
-        <div class="form-group">
-            <label for="badgeNumber">Nombre de badges</label>
-            <select class="custom-select" name="badgeNumber">
-                <option value="0" selected="selected">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+
+        <h2 class="h4 m-3">Autres questions...</h2>
+        <div class="row justify-content-around">
+
+            <!-- Affichage de la question sur le super héro.  -->
+            <div class="form-group col-3 mt-4">
+                <label for="textHero">Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi
+                    ?</label>
+                <textarea name="textHero" id="textHero" cols="50" rows="5"></textarea>
+            </div>
+
+            <!-- Affichage de la question sur le hack.  -->
+            <div class="form-group col-3 mt-4">
+                <label for="textHacks">Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)</label>
+                <textarea name="textHacks" id="textHacks" cols="50" rows="5"></textarea>
+            </div>
+
+            <!-- Affichage de la question sur l'expérience en programmation.  -->
+            <div class="form-group col-3">
+                <label for="textExperience">Avez vous déjà eu une expérience avec la programmation et/ou l'informatique
+                    avant de remplir ce formulaire ?</label>
+                <textarea name="textExperience" id="textExperience" cols="50" rows="5"></textarea>
+            </div>
+
         </div>
 
-        <!-- Affichage du lien code academy  -->
-        <div class="form-group">
-            <label for="codeAcademyURL">Lien vers Code Academy</label>
-            <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL"
-                placeholder="www.codeAcademyURL.fr">
+        <div class="row m-4 justify-content-around">
+            <button type="submit" class="btn btn-success btn-lg col-4">Valider</button>
         </div>
-
-        <!-- Affichage de la question sur le super héro.  -->
-        <div class="form-group">
-            <label for="textHero">Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi ?</label>
-            <textarea name="textHero" id="textHero" cols="80" rows="5"></textarea>
-        </div>
-
-        <!-- Affichage de la question sur le hack.  -->
-        <div class="form-group">
-            <label for="textHacks">Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)</label>
-            <textarea name="textHacks" id="textHacks" cols="80" rows="5"></textarea>
-        </div>
-
-        <!-- Affichage de la question sur l'expérience en programmation.  -->
-        <div class="form-group">
-            <label for="textExperience">Avez vous déjà eu une expérience avec la programmation et/ou l'informatique
-                avant de remplir ce formulaire ?</label>
-            <textarea name="textExperience" id="textExperience" cols="80" rows="5"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-success btn-lg">Valider</button>
 
     </form>
 </div>
