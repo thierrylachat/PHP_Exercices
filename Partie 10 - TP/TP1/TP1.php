@@ -817,26 +817,26 @@ var_dump($errors);
 </div>
 
 <?php else: ?>
-            <div>
-                <p>Affichage des données de l'utilisateur</p>
-                <p><?= $civility ?></p>
-                <p><?= $firstName ?></p>
-                <p><?= $lastName ?></p>
-                <p><?= $birthday ?></p>
-                <p><?= $country ?></p>
-                <p><?= $nationality ?></p>
-                <p><?= $address ?>, <?= $postcode?>, <?= $city ?></p>
-                <p><a href="mailto:<?= $email ?>">adresse e-mail</a></p>
-                <p><a href="tel:<?= $phone ?>">téléphone</a></p>
-                <p><?= $degrees ?></p>
-                <p><?= $jobNumber?></p>
-                <p><?= $badgeNumber ?></p>
-                <p><a href="<?= $codeAcademyURL ?>">Lien Codecademy</a></p>
-                <p><?= $textHacks ?></p>
-                <p><?= $textHero ?></p>
-                <p><?= $skills ?></p>
-            </div>
-            <?php endif; ?>
+<div>
+    <p>Affichage des données de l'utilisateur</p>
+    <p><?= $civility ?></p>
+    <p><?= $firstName ?></p>
+    <p><?= $lastName ?></p>
+    <p><?= $birthday ?></p>
+    <p><?= $country ?></p>
+    <p><?= $nationality ?></p>
+    <p><?= $address ?>, <?= $postcode?>, <?= $city ?></p>
+    <p><a href="mailto:<?= $email ?>">adresse e-mail</a></p>
+    <p><a href="tel:<?= $phone ?>">téléphone</a></p>
+    <p><?= $degrees ?></p>
+    <p><?= $jobNumber?></p>
+    <p><?= $badgeNumber ?></p>
+    <p><a href="<?= $codeAcademyURL ?>">Lien Codecademy</a></p>
+    <p><?= $textHacks ?></p>
+    <p><?= $textHero ?></p>
+    <p><?= $skills ?></p>
+</div>
+<?php endif; ?>
 
 
 <!-- Insertion du footer. -->
