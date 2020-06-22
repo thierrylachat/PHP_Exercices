@@ -49,7 +49,7 @@ $errors = [];
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isSubmitted = true;
-}
+
 
 // Nettoyage des variables, vérification que les variables sont remplies et qu'elles correspondent aux REGEX.
 
@@ -176,7 +176,12 @@ if (!isset($skills)){
 }
 var_dump($errors);
 
+}
+
 ?>
+
+
+<?php if($isSubmitted && count($errors) != 0): ?>
 
 <!-- Création du titre du formulaire. -->
 <h1 class="m-4 p-4 font-weight-bold h3">Formulaire d'enregistrement pour nouvel apprenant</h1>
@@ -201,14 +206,16 @@ var_dump($errors);
             <!-- Affichage du nom.  -->
             <div class="form-group m-3 col-3">
                 <label for="lastName">Nom</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" value="<?= $lastName ?>" placeholder="Dupont">
+                <input type="text" class="form-control" id="lastName" name="lastName" value="<?= $lastName ?>"
+                    placeholder="Dupont">
                 <p class="error text-danger"><?= $errors['lastName'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du prénom.  -->
             <div class="form-group m-3 col-3">
                 <label for="firstName">Prénom</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" value="<?= $firstName ?>" placeholder="Philippe">
+                <input type="text" class="form-control" id="firstName" name="firstName" value="<?= $firstName ?>"
+                    placeholder="Philippe">
                 <p class="error text-danger"><?= $errors['firstName'] ?? '' ?></p>
             </div>
         </div>
@@ -217,7 +224,8 @@ var_dump($errors);
             <!-- Affichage de l'âge.  -->
             <div class="form-group col-3">
                 <label for="birthday">Date de naissance</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" value="<?= $birthday ?>" placeholder="26/01/1967">
+                <input type="date" class="form-control" id="birthday" name="birthday" value="<?= $birthday ?>"
+                    placeholder="26/01/1967">
                 <p class="error text-danger"><?= $errors['birthday'] ?? '' ?></p>
             </div>
 
@@ -671,14 +679,16 @@ var_dump($errors);
             <!-- Affichage de l'adresse.  -->
             <div class="form-group col-3">
                 <label for="address">Adresse</label>
-                <input type="text" class="form-control" id="address" name="address" value="<?= $address ?>" placeholder="18 Rue Louis Braille">
+                <input type="text" class="form-control" id="address" name="address" value="<?= $address ?>"
+                    placeholder="18 Rue Louis Braille">
                 <p class="error text-danger"><?= $errors['address'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du code postal.  -->
             <div class="form-group col-3">
                 <label for="postcode">Code postal</label>
-                <input type="number" class="form-control" id="postcode" name="postcode" value="<?= $postcode ?>" placeholder="75008">
+                <input type="number" class="form-control" id="postcode" name="postcode" value="<?= $postcode ?>"
+                    placeholder="75008">
                 <p class="error text-danger"><?= $errors['postcode'] ?? '' ?></p>
             </div>
 
@@ -697,14 +707,16 @@ var_dump($errors);
             <!-- Affichage de l'adresse mail.  -->
             <div class="form-group col-4">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>" placeholder="philippe.dupont@gmail.com">
+                <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>"
+                    placeholder="philippe.dupont@gmail.com">
                 <p class="error text-danger"><?= $errors['email'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du numéro de téléphone.  -->
             <div class="form-group col-4">
                 <label for="phone">Numéro de téléphone</label>
-                <input type="tel" class="form-control" id="phone" name="phone" value="<?= $phone ?>" placeholder="06.49.58.74.63">
+                <input type="tel" class="form-control" id="phone" name="phone" value="<?= $phone ?>"
+                    placeholder="06.49.58.74.63">
                 <p class="error text-danger"><?= $errors['phone'] ?? '' ?></p>
             </div>
         </div>
@@ -729,7 +741,8 @@ var_dump($errors);
             <!-- Affichage du numéro de pôle emploi (7 chiffres suivis d'une lettre)  -->
             <div class="form-group col-4">
                 <label for="jobNumber">Numéro pôle emploi</label>
-                <input type="text" class="form-control" id="jobNumber" name="jobNumber" value="<?= $jobNumber?>" placeholder="359945F">
+                <input type="text" class="form-control" id="jobNumber" name="jobNumber" value="<?= $jobNumber?>"
+                    placeholder="359945F">
                 <p class="error text-danger"><?= $errors['jobNumber'] ?? '' ?></p>
             </div>
 
@@ -756,8 +769,8 @@ var_dump($errors);
             <!-- Affichage du lien code academy  -->
             <div class="form-group col-4">
                 <label for="codeAcademyURL">Lien vers Code Academy</label>
-                <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL" value="<?= $codeAcademyURL ?>"
-                    placeholder="www.codeAcademyURL.fr">
+                <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL"
+                    value="<?= $codeAcademyURL ?>" placeholder="www.codeAcademyURL.fr">
                 <p class="error text-danger"><?= $errors['codeAcademyURL'] ?? '' ?></p>
             </div>
 
@@ -772,14 +785,12 @@ var_dump($errors);
                 <label for="textHero">Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi
                     ?</label>
                 <textarea name="textHero" id="textHero" cols="50" rows="5"></textarea>
-                <p class="error text-danger"><?= $errors['textHero'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la question sur le hack.  -->
             <div class="form-group col-3 mt-4">
                 <label for="textHacks">Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)</label>
                 <textarea name="textHacks" id="textHacks" cols="50" rows="5"></textarea>
-                <p class="error text-danger"><?= $errors['textHacks'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la question sur l'expérience en programmation.  -->
@@ -804,6 +815,28 @@ var_dump($errors);
 
     </form>
 </div>
+
+<?php else: ?>
+            <div>
+                <p>Affichage des données de l'utilisateur</p>
+                <p><?= $civility ?></p>
+                <p><?= $firstName ?></p>
+                <p><?= $lastName ?></p>
+                <p><?= $birthday ?></p>
+                <p><?= $country ?></p>
+                <p><?= $nationality ?></p>
+                <p><?= $address ?>, <?= $postcode?>, <?= $city ?></p>
+                <p><a href="mailto:<?= $email ?>">adresse e-mail</a></p>
+                <p><a href="tel:<?= $phone ?>">téléphone</a></p>
+                <p><?= $degrees ?></p>
+                <p><?= $jobNumber?></p>
+                <p><?= $badgeNumber ?></p>
+                <p><a href="<?= $codeAcademyURL ?>">Lien Codecademy</a></p>
+                <p><?= $textHacks ?></p>
+                <p><?= $textHero ?></p>
+                <p><?= $skills ?></p>
+            </div>
+            <?php endif; ?>
 
 
 <!-- Insertion du footer. -->
