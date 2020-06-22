@@ -191,7 +191,7 @@ var_dump($errors);
             <!-- Affichage de la civilité.  -->
             <div class="form-group m-3 col-3">
                 <label for="civility">Civilité</label>
-                <select class="custom-select" name="civility">
+                <select class="custom-select" name="civility" value="<?= $civility ?>">
                     <option value="Monsieur">Mr</option>
                     <option value="Madame">Mme</option>
                 </select>
@@ -201,14 +201,14 @@ var_dump($errors);
             <!-- Affichage du nom.  -->
             <div class="form-group m-3 col-3">
                 <label for="lastName">Nom</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Dupont">
+                <input type="text" class="form-control" id="lastName" name="lastName" value="<?= $lastName ?>" placeholder="Dupont">
                 <p class="error text-danger"><?= $errors['lastName'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du prénom.  -->
             <div class="form-group m-3 col-3">
                 <label for="firstName">Prénom</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Philippe">
+                <input type="text" class="form-control" id="firstName" name="firstName" value="<?= $firstName ?>" placeholder="Philippe">
                 <p class="error text-danger"><?= $errors['firstName'] ?? '' ?></p>
             </div>
         </div>
@@ -217,14 +217,14 @@ var_dump($errors);
             <!-- Affichage de l'âge.  -->
             <div class="form-group col-3">
                 <label for="birthday">Date de naissance</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" placeholder="26/01/1967">
+                <input type="date" class="form-control" id="birthday" name="birthday" value="<?= $birthday ?>" placeholder="26/01/1967">
                 <p class="error text-danger"><?= $errors['birthday'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du pays de naissance.  -->
             <div class="form-group col-3">
                 <label for="country">Pays de naissance</label>
-                <select class="custom-select" name="country">
+                <select class="custom-select" name="country" value="<?= $country ?>">
                     <option value="France" selected="selected">France </option>
                     <option value="Afghanistan">Afghanistan </option>
                     <option value="Afrique_Centrale">Afrique Centrale </option>
@@ -461,7 +461,7 @@ var_dump($errors);
             <!-- Affichage de la nationalité.  -->
             <div class="form-group col-3">
                 <label for="nationality">Nationalité</label>
-                <select class="custom-select" name="nationality">
+                <select class="custom-select" name="nationality" value="<?= $nationality ?>">
                     <option value="AFG">Afghane (Afghanistan)</option>
                     <option value="ALB">Albanaise (Albanie)</option>
                     <option value="DZA">Algérienne (Algérie)</option>
@@ -671,21 +671,21 @@ var_dump($errors);
             <!-- Affichage de l'adresse.  -->
             <div class="form-group col-3">
                 <label for="address">Adresse</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="18 Rue Louis Braille">
+                <input type="text" class="form-control" id="address" name="address" value="<?= $address ?>" placeholder="18 Rue Louis Braille">
                 <p class="error text-danger"><?= $errors['address'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du code postal.  -->
             <div class="form-group col-3">
                 <label for="postcode">Code postal</label>
-                <input type="number" class="form-control" id="postcode" name="postcode" placeholder="75008">
+                <input type="number" class="form-control" id="postcode" name="postcode" value="<?= $postcode ?>" placeholder="75008">
                 <p class="error text-danger"><?= $errors['postcode'] ?? '' ?></p>
             </div>
 
             <!-- Affichage de la ville.  -->
             <div class="form-group col-3">
                 <label for="city">Ville</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Paris">
+                <input type="text" class="form-control" id="city" name="city" value="<?= $city ?>" placeholder="Paris">
                 <p class="error text-danger"><?= $errors['city'] ?? '' ?></p>
             </div>
 
@@ -697,15 +697,14 @@ var_dump($errors);
             <!-- Affichage de l'adresse mail.  -->
             <div class="form-group col-4">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email"
-                    placeholder="philippe.dupont@gmail.com">
+                <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>" placeholder="philippe.dupont@gmail.com">
                 <p class="error text-danger"><?= $errors['email'] ?? '' ?></p>
             </div>
 
             <!-- Affichage du numéro de téléphone.  -->
             <div class="form-group col-4">
                 <label for="phone">Numéro de téléphone</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="06.49.58.74.63">
+                <input type="tel" class="form-control" id="phone" name="phone" value="<?= $phone ?>" placeholder="06.49.58.74.63">
                 <p class="error text-danger"><?= $errors['phone'] ?? '' ?></p>
             </div>
         </div>
@@ -717,7 +716,7 @@ var_dump($errors);
             <!-- Affichage du niveau de diplôme.  -->
             <div class="form-group col-4">
                 <label for="degrees">Niveau de diplôme</label>
-                <select class="custom-select" name="degrees">
+                <select class="custom-select" name="degrees" value="<?= $degrees ?>">
                     <option value="Sans diplôme" selected="selected">Sans diplôme</option>
                     <option value="Bac">Bac</option>
                     <option value="Bac+2">Bac+2</option>
@@ -730,7 +729,7 @@ var_dump($errors);
             <!-- Affichage du numéro de pôle emploi (7 chiffres suivis d'une lettre)  -->
             <div class="form-group col-4">
                 <label for="jobNumber">Numéro pôle emploi</label>
-                <input type="text" class="form-control" id="jobNumber" name="jobNumber" placeholder="359945F">
+                <input type="text" class="form-control" id="jobNumber" name="jobNumber" value="<?= $jobNumber?>" placeholder="359945F">
                 <p class="error text-danger"><?= $errors['jobNumber'] ?? '' ?></p>
             </div>
 
@@ -743,7 +742,7 @@ var_dump($errors);
             <!-- Nombre de badges  -->
             <div class="form-group col-4">
                 <label for="badgeNumber">Nombre de badges</label>
-                <select class="custom-select" name="badgeNumber">
+                <select class="custom-select" name="badgeNumber" value="<?= $badgeNumber ?>">
                     <option value="0" selected="selected">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -757,7 +756,7 @@ var_dump($errors);
             <!-- Affichage du lien code academy  -->
             <div class="form-group col-4">
                 <label for="codeAcademyURL">Lien vers Code Academy</label>
-                <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL"
+                <input type="url" class="form-control" id="codeAcademyURL" name="codeAcademyURL" value="<?= $codeAcademyURL ?>"
                     placeholder="www.codeAcademyURL.fr">
                 <p class="error text-danger"><?= $errors['codeAcademyURL'] ?? '' ?></p>
             </div>
