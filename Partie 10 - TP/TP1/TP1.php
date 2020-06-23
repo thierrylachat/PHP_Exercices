@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Civilité.
 $civility= trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
 if (empty($civility)) {
-        $errors['civility'] = 'Merci d\'indiquer votre civilité.';
+    $errors['civility'] = 'Merci d\'indiquer votre civilité.';
 } 
 
 // Prénom.
@@ -156,9 +156,9 @@ if (empty($badgeNumber)){
 // Code academy.
 $codeAcademyURL= trim(filter_input(INPUT_POST, 'codeAcademyURL', FILTER_SANITIZE_STRING));
 if (empty($codeAcademyURL)){
-        $errors['codeAcademyURL'] = 'Merci d\'indinquer votre lien Codecademy.';
+        $errors['codeAcademyURL'] = 'Merci d\'indiquer votre lien Codecademy.';
 } elseif (!filter_var($codeAcademyURL, FILTER_VALIDATE_URL)) {
-        $errors['codeAcademyURL'] = 'Merci d\'indinquer votre lien Codecademy valide.';
+        $errors['codeAcademyURL'] = 'Merci d\'indiquer votre lien Codecademy valide.';
 }
 
 // Hacks.
@@ -170,11 +170,11 @@ $textHero = trim(filter_input(INPUT_POST, 'textHero', FILTER_SANITIZE_STRING));
 // Expérience de programmation.
 $skills = trim(filter_input(INPUT_POST, 'skills', FILTER_SANITIZE_STRING));
 
-// Utilisation de isset et non de empty pour les checkbox pour vérifier que la checkbox a été sélectionnée.
-if (!isset($skills)){
+// Normalement, utilisation de isset et non de empty pour les checkbox pour vérifier que la checkbox a été sélectionnée.
+if (empty($skills)){
     $errors['skills'] = 'Merci de cocher un choix.';
 }
-var_dump($errors);
+// var_dump($errors);
 
 }
 
