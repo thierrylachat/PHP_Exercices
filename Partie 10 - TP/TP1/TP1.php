@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Civilité.
 $civility= trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
-if (empty($civility)){
+if (empty($civility)) {
         $errors['civility'] = 'Merci d\'indiquer votre civilité.';
 } 
 
@@ -105,9 +105,9 @@ if (empty ($phone)){
 
 // Adresse email.
 $email= trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
-if (empty ($mail)){
+if (empty ($email)){
         $errors['email'] = 'Merci de renseigner correctement votre adresse électronique.';
-} elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'Le format attendu n\'est pas respecté.';
 }
 
@@ -181,7 +181,7 @@ var_dump($errors);
 ?>
 
 
-<?php if($isSubmitted && count($errors) != 0): ?>
+<?php if(($isSubmitted== false) || $isSubmitted && count($errors) != 0): ?>
 
 <!-- Création du titre du formulaire. -->
 <h1 class="m-4 p-4 font-weight-bold h3">Formulaire d'enregistrement pour nouvel apprenant</h1>
