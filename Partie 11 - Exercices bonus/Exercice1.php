@@ -126,7 +126,7 @@ if($isSubmitted && count($errors) == 0) {
 
     <!-- Création du titre du formulaire. -->
 
-    <div class="m-4 p-4 col-9 border border-secondary">
+    <div class="m-4 p-4 col-9 card border border-secondary bg-secondary">
         <form method="post" action="Exercice1.php">
 
             <h1 class="m-4 p-4 font-weight-bold h2 text-center">Formulaire d'inscription</h1>
@@ -137,6 +137,7 @@ if($isSubmitted && count($errors) == 0) {
                 <!-- Attention value = $civility non finalisé. -->
                 <div class="form-group m-3 col-4">
                     <label for="civility">Civilité</label>
+
                     <div class="form-check col-1">
                         <input class="form-check-input" type="radio" name="civility" id="civility" value="1">
                         <label class="form-check-label" for="civility">Monsieur</label>
@@ -193,12 +194,13 @@ if($isSubmitted && count($errors) == 0) {
                     <label for="password">Mot de passe</label>
                     <input type="password" class="form-control" id="password" name="password" value="<?= $password ?>"
                         placeholder="Mdp1234">
-                        <div id="forcePassword">
-                                <div class="force-progress w-100 rounded-pill">
-                                      <div id="progress" class="p-bar" role="progressbar" aria-valuemin="0" aria-valuemax="4"></div>
-                                </div>
-                                <div id="force" class="small text-secondary">Faible</div>
+                    <div id="forcePassword">
+                        <div class="force-progress w-100 rounded-pill">
+                            <div id="progress" class="p-bar" role="progressbar" aria-valuemin="0" aria-valuemax="4">
                             </div>
+                        </div>
+                        <div id="force" class="small text-secondary">Faible</div>
+                    </div>
                     <p class="error text-danger"><?= $errors['password'] ?? '' ?></p>
                 </div>
 
@@ -214,11 +216,14 @@ if($isSubmitted && count($errors) == 0) {
 
             <div class="row m-4 justify-content-around">
                 <div class="form-check">
-                    <input class="form-check-input" name="cgu" type="checkbox" value="cgu" id="cgu">
-                    <label class="form-check-label font-weight-bold" for="cgu">
-                        En soumettant ce formulaire, j'autorise que les informations saisies dans ce formulaire soient
-                        utilisées pour permettre de me reconnecter ultérieurement.
-                    </label>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="cgu" type="checkbox" value="cgu"
+                            id="cgu">
+                        <label class="custom-control-label font-weight-bold" for="cgu">En soumettant ce formulaire,
+                            j'autorise que les informations saisies dans ce formulaire soient
+                            utilisées pour permettre de me reconnecter ultérieurement.</label>
+                    </div>
                     <p class="error text-danger"><?= $errors['cgu'] ?? '' ?></p>
                 </div>
             </div>
@@ -229,58 +234,53 @@ if($isSubmitted && count($errors) == 0) {
 
     </div>
 
-<script src="jquery.js"></script>
-<script type="text/javascript">
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+        $("input[name='password']").keyup(function () {
+            // prend la value du selecteur choisi précédement
+            var password = $(this).val();
+            var force = 0;
+
+            // vérifie que la regex est true ou false
+            // var regex = (/(?=.*[a-z])/).test(password);
+
+            // vérifie que la value de l'input contient des lettres
+            // Si c'est le cas, la force prend +1
+            if (password.match(/(?=.*[a-z])/) || password.match(/(?=.*[A-Z])/)) {
+                force++;
+            }
+
+            // vérifie que la value de l'input contient des chiffres
+            if (password.match(/(?=.*[0-9])/)) {
+                force++;
+            }
+
+            // vérifie que la value de l'input contient des caractères spéciaux
+            if (password.match(/(?=.*\W)/)) {
+                force++;
+            }
 
 
-        $("input[name='password']").keyup(function(){
-			// prend la value du selecteur choisi précédement
-			var password = $(this).val();
-			var force = 0;
+            // vérifie que le password contient au moins 8 caractères
+            if (password.length >= 8) {
+                force++;
+            }
 
-			// vérifie que la regex est true ou false
-			// var regex = (/(?=.*[a-z])/).test(password);
-			
-			// vérifie que la value de l'input contient des lettres
-			// Si c'est le cas, la force prend +1
-			if (password.match(/(?=.*[a-z])/) || password.match(/(?=.*[A-Z])/)) {
-				force ++;
-			}
-
-			// vérifie que la value de l'input contient des chiffres
-			if (password.match(/(?=.*[0-9])/)) {
-				force ++;
-			}
-
-			// vérifie que la value de l'input contient des caractères spéciaux
-			if (password.match(/(?=.*\W)/)) {
-				force ++;
-			}
-
-
-			// vérifie que le password contient au moins 8 caractères
-			if (password.length >= 8) {
-				force ++;
-			}
-
-			// couleur en fonction de la force
-			var textForce = $("#force");
-// couleur et texte en fonction de la force
+            // couleur en fonction de la force
+            var textForce = $("#force");
+            // couleur et texte en fonction de la force
             if (force == 1) {
                 var bgColor = '#dc3545';
                 textForce.text('Faible');
-            }
-            else{
+            } else {
                 if (force == 2) {
                     var bgColor = '#ffc107';
                     textForce.text('Moyen');
-                }
-                else{
+                } else {
                     if (force == 3) {
                         var bgColor = '#28a745';
                         textForce.text('Fort');
-                    }
-                    else{
+                    } else {
                         if (force == 4) {
                             var bgColor = '#0d6e25';
                             textForce.text('Très fort');
@@ -288,32 +288,32 @@ if($isSubmitted && count($errors) == 0) {
                     }
                 }
             }
-			document.getElementById('progress').style.backgroundColor = bgColor;
-			document.getElementById('progress').style.width = 25*force+'%';
+            document.getElementById('progress').style.backgroundColor = bgColor;
+            document.getElementById('progress').style.width = 25 * force + '%';
 
-			//document.getElementById('progress').setAttribute('style', 'width:'+25*force+'%; background-color: '+bgColor);
+            //document.getElementById('progress').setAttribute('style', 'width:'+25*force+'%; background-color: '+bgColor);
 
-			// change le css de la progressbar
-			/* $("#progress").css({
-				'width': 25*force+'%',
-				'background-color': bgColor
-			}); */
-		})
-    // fait disparaitre la progressbar quand on quitte le champ password
-		$("input[name='password']").blur(function(){
-			$("#forcePassword").slideUp();
+            // change le css de la progressbar
+            /* $("#progress").css({
+            	'width': 25*force+'%',
+            	'background-color': bgColor
+            }); */
+        })
+        // fait disparaitre la progressbar quand on quitte le champ password
+        $("input[name='password']").blur(function () {
+            $("#forcePassword").slideUp();
         })
         // Fait apparaitre la progressbar quand on focus le champ password
-		document.querySelector(`input[name="password"]`).addEventListener('focus', function(){ 
-			let forcePassword = $("#forcePassword").slideDown();
-		})
+        document.querySelector(`input[name="password"]`).addEventListener('focus', function () {
+            let forcePassword = $("#forcePassword").slideDown();
+        })
 
-		/* $("input[name='password']").focus(function(){
-			$("#forcePassword").slideDown();
-		}) */
+        /* $("input[name='password']").focus(function(){
+        	$("#forcePassword").slideDown();
+        }) */
     </script>
 
-    
-<!-- Insertion du footer.  -->
 
-<?php include 'footer.php'; ?>
+    <!-- Insertion du footer.  -->
+
+    <?php include 'footer.php'; ?>
