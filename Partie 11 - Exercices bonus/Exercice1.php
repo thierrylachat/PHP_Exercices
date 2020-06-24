@@ -134,17 +134,16 @@ if($isSubmitted && count($errors) == 0) {
             <div class="row justify-content-around">
 
                 <!-- Affichage de la civilité.  -->
-                <!-- Attention value = $civility non finalisé. -->
                 <div class="form-group m-3 col-4">
                     <label for="civility">Civilité</label>
-
-                    <div class="form-check col-1">
-                        <input class="form-check-input" type="radio" name="civility" id="civility" value="1">
-                        <label class="form-check-label" for="civility">Monsieur</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="civility" class="custom-control-input"
+                            checked="" value="1">
+                        <label class="custom-control-label" for="customRadio1">Monsieur</label>
                     </div>
-                    <div class="form-check col-1">
-                        <input class="form-check-input" type="radio" name="civility" id="civility" value="2">
-                        <label class="form-check-label" for="civility">Madame</label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="civility" class="custom-control-input" value="2">
+                        <label class="custom-control-label" for="customRadio2">Madame</label>
                     </div>
                     <p class="error text-danger"><?= $errors['civility'] ?? '' ?></p>
                 </div>

@@ -1,3 +1,17 @@
+/* Mise en forme du formulaire. */
+.card {
+    background-color: #A1CCCA !important;
+    font-size: 15px;
+}
+
+
+/* Mise en forme du bouton. */
+.btn {
+    font-size: 18px;
+}
+
+
+/* Mise en forme de la force progress du password. */
 #forcePassword{
     display: none;
     margin-top: 1rem;
@@ -13,12 +27,4 @@
     width: 0;
     height: 100%;
     transition: width ease-in-out 1s;
-}
-
-.card {
-    background-color: #A1CCCA !important;
-}
-
-.btn {
-    font-size: 18px;
 }
