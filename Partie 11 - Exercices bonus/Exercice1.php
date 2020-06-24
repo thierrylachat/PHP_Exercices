@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // Nettoyage des variables, vérification que les variables sont remplies et qu'elles correspondent aux REGEX.
 
-// Civilité.
+    // Civilité.
     $civility = trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
     if (empty($civility)) {
         $errors['civility'] = 'Merci d\'indiquer votre civilité.';
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['civility'] = 'La donnée saisie n\'est pas correcte';
     }
 
-// Prénom.
+    // Prénom.
     $firstName = trim(filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING));
     if (empty($firstName)) {
         $errors['firstName'] = 'Merci de renseigner votre prénom.';
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['firstName'] = 'Le format attendu n\'est pas respecté';
     }
 
-// Nom.
+    // Nom.
     $lastName = trim(filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING));
     if (empty($lastName)) {
         $errors['lastName'] = 'Merci de renseigner votre nom.';
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['lastName'] = 'Le format attendu n\'est pas respecté';
     }
 
-// Date de naissance.
+    // Date de naissance.
     $birthday = trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
     if (empty($birthday)) {
         $errors['birthday'] = 'Merci de renseigner votre date de naissance.';
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['birthday'] = 'Le format attendu n\'est pas respecté.';
     }
 
-// Adresse email.
+    // Adresse email.
     $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
     if (empty($email)) {
         $errors['email'] = 'Merci de renseigner correctement votre adresse électronique.';
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['email'] = 'Le format attendu n\'est pas respecté.';
     }
 
-// Password.
+    // Password.
     $password = $_POST['password'];
     $passwordConfirmation = $_POST['passwordConfirmation'];
     if (empty($password)) {
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['password'] = 'Votre mot de passe doit contenir au minimum 8 caractères(majuscule,minuscule,chiffre et caractère special)';
     }
 
-// CGU.
+    // CGU.
     if (!isset($_POST['cgu'])) {
         $errors['cgu'] = 'Vous devez accepter nos conditions générales d\'utilisation pour vous inscrire.';
     }
