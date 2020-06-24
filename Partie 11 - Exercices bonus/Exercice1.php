@@ -1,4 +1,4 @@
-<!-- Enoncé : 
+<!-- Enoncé :
 Créer un formulaire d'inscription dans votre page d'accueil index.php avec les champs suivants :
 Civilité de type radio
 Prénom, nom de type texte
@@ -14,11 +14,12 @@ A la validation du formulaire, afficher le formulaire et les messages d'erreurs 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice1';
-    include 'header.php';
+$titre = 'Exercice1';
+include 'header.php';
 ?>
 
-<?php 
+<?php
+
 // Déclaration de REGEX.
 $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
 $regexBirthday = '/^((?:19|20)[0-9]{2})-((?:0[1-9])|(?:1[0-2]))-((?:0[1-9])|(?:1[0-9])|(?:2[0-9])|(?:3[01]))$/';
@@ -28,72 +29,77 @@ $regexPassword = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}/';
 $isSubmitted = false;
 
 // Déclaration de variables.
-$civility= ''; $firstName=''; $lastName='';
-$birthday=''; $email=''; $password=''; $passwordConfirmation=''; 
-$cgu=''; $errors = [];
+$civility = '';
+$firstName = '';
+$lastName = '';
+$birthday = '';
+$email = '';
+$password = '';
+$passwordConfirmation = '';
+$cgu = '';
+$errors = [];
 
 // Soumission du formulaire.
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isSubmitted = true;
 
 // Nettoyage des variables, vérification que les variables sont remplies et qu'elles correspondent aux REGEX.
 
 // Civilité.
-$civility = trim(filter_input(INPUT_POST,'civility', FILTER_SANITIZE_STRING));
-if (empty($civility)) {
-    $errors['civility'] = 'Merci d\'indiquer votre civilité.';
-} 
-elseif ($civility != 1 && $civility != 2) {
-    $errors['civility'] = 'La donnée saisie n\'est pas correcte';
-}
+    $civility = trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
+    if (empty($civility)) {
+        $errors['civility'] = 'Merci d\'indiquer votre civilité.';
+    } elseif ($civility != 1 && $civility != 2) {
+        $errors['civility'] = 'La donnée saisie n\'est pas correcte';
+    }
 
 // Prénom.
-$firstName = trim(filter_input(INPUT_POST,'firstName', FILTER_SANITIZE_STRING));
-if (empty($firstName)) {
-    $errors['firstName'] = 'Merci de renseigner votre prénom.';
-} elseif (!preg_match($regexNames,$firstName)) {
-    $errors['firstName'] = 'Le format attendu n\'est pas respecté';
-}
+    $firstName = trim(filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING));
+    if (empty($firstName)) {
+        $errors['firstName'] = 'Merci de renseigner votre prénom.';
+    } elseif (!preg_match($regexNames, $firstName)) {
+        $errors['firstName'] = 'Le format attendu n\'est pas respecté';
+    }
 
 // Nom.
-$lastName = trim(filter_input(INPUT_POST,'lastName', FILTER_SANITIZE_STRING));
-if (empty($lastName)) {
-    $errors['lastName'] = 'Merci de renseigner votre nom.';
-} elseif (!preg_match($regexNames,$lastName)) {
-    $errors['lastName'] = 'Le format attendu n\'est pas respecté';
-}
+    $lastName = trim(filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING));
+    if (empty($lastName)) {
+        $errors['lastName'] = 'Merci de renseigner votre nom.';
+    } elseif (!preg_match($regexNames, $lastName)) {
+        $errors['lastName'] = 'Le format attendu n\'est pas respecté';
+    }
 
 // Date de naissance.
-$birthday= trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
-if (empty ($birthday)){
+    $birthday = trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
+    if (empty($birthday)) {
         $errors['birthday'] = 'Merci de renseigner votre date de naissance.';
-} elseif (!preg_match($regexBirthday,$birthday)) {
+    } elseif (!preg_match($regexBirthday, $birthday)) {
         $errors['birthday'] = 'Le format attendu n\'est pas respecté.';
-}
+    }
 
 // Adresse email.
-$email= trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
-if (empty ($email)){
+    $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
+    if (empty($email)) {
         $errors['email'] = 'Merci de renseigner correctement votre adresse électronique.';
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'Le format attendu n\'est pas respecté.';
-}
+    }
 
-// Password. 
-$password = $_POST['password'];
-$passwordConfirmation = $_POST['passwordConfirmation'];
-if (empty($password)) {
-    $errors['password'] = 'Merci de choisir votre mot de passe.';
-} elseif ($password != $passwordConfirmation) {
-    $errors['password'] = 'Vos mots de passe ne correspondent pas.';
-} elseif (!preg_match($regexPassword, $password)) {
-    $errors['password'] = 'Votre mot de passe doit contenir au minimum 8 caractères(majuscule,minuscule,chiffre et caractère special)';
-}
+// Password.
+    $password = $_POST['password'];
+    $passwordConfirmation = $_POST['passwordConfirmation'];
+    if (empty($password)) {
+        $errors['password'] = 'Merci de choisir votre mot de passe.';
+    } elseif ($password != $passwordConfirmation) {
+        $errors['password'] = 'Vos mots de passe ne correspondent pas.';
+    } elseif (!preg_match($regexPassword, $password)) {
+        $errors['password'] = 'Votre mot de passe doit contenir au minimum 8 caractères(majuscule,minuscule,chiffre et caractère special)';
+    }
 
 // CGU.
-if (!isset($_POST['cgu'])) {
-    $errors['cgu'] = 'Vous devez accepter nos conditions générales d\'utilisation pour vous inscrire.';
-}
+    if (!isset($_POST['cgu'])) {
+        $errors['cgu'] = 'Vous devez accepter nos conditions générales d\'utilisation pour vous inscrire.';
+    }
 
 }
 
@@ -106,17 +112,16 @@ if (count($errors) == 0) {
     setcookie('user', $user, time() + 3600, '/', '', false, false);
 }
 
-
 // Affichage de l'alerte de création de compte si le formulaire est soumis et qu'il n'y a pas d'erreurs.
 
-if($isSubmitted && count($errors) == 0) {
+if ($isSubmitted && count($errors) == 0) {
 
-?>
+    ?>
 
 <div class="alert alert-success" role="alert">Votre compte a été créé avec succès.</div>
 
-<?php 
-    }
+<?php
+}
 ?>
 
 <!-- Création du titre du formulaire. -->
@@ -145,15 +150,15 @@ if($isSubmitted && count($errors) == 0) {
                         <input type="radio" id="customRadio2" name="civility" class="custom-control-input" value="2">
                         <label class="custom-control-label" for="customRadio2">Madame</label>
                     </div>
-                    <p class="error text-danger"><?= $errors['civility'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['civility'] ?? ''?></p>
                 </div>
 
                 <!-- Affichage du nom.  -->
                 <div class="form-group m-3 col-4">
                     <label for="lastName">Nom</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" value="<?= $lastName ?>"
+                    <input type="text" class="form-control" id="lastName" name="lastName" value="<?=$lastName?>"
                         placeholder="Dupont">
-                    <p class="error text-danger"><?= $errors['lastName'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['lastName'] ?? ''?></p>
                 </div>
 
             </div>
@@ -162,17 +167,17 @@ if($isSubmitted && count($errors) == 0) {
                 <!-- Affichage du prénom.  -->
                 <div class="form-group m-3 col-4">
                     <label for="firstName">Prénom</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" value="<?= $firstName ?>"
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="<?=$firstName?>"
                         placeholder="Philippe">
-                    <p class="error text-danger"><?= $errors['firstName'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['firstName'] ?? ''?></p>
                 </div>
 
                 <!-- Affichage de l'âge.  -->
                 <div class="form-group m-3 col-4">
                     <label for="birthday">Date de naissance</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday" value="<?= $birthday ?>"
+                    <input type="date" class="form-control" id="birthday" name="birthday" value="<?=$birthday?>"
                         placeholder="26/01/1967">
-                    <p class="error text-danger"><?= $errors['birthday'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['birthday'] ?? ''?></p>
                 </div>
 
             </div>
@@ -183,15 +188,15 @@ if($isSubmitted && count($errors) == 0) {
                 <!-- Inscription de l'adresse mail.  -->
                 <div class="form-group m-3 col-9">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>"
+                    <input type="email" class="form-control" id="email" name="email" value="<?=$email?>"
                         placeholder="philippe.dupont@gmail.com">
-                    <p class="error text-danger"><?= $errors['email'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['email'] ?? ''?></p>
                 </div>
 
                 <!-- Inscription du mot de passe. -->
                 <div class="form-group m-3 col-9">
                     <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password" value="<?= $password ?>"
+                    <input type="password" class="form-control" id="password" name="password" value="<?=$password?>"
                         placeholder="Mdp1234">
                     <div id="forcePassword">
                         <div class="force-progress w-100 rounded-pill">
@@ -200,15 +205,15 @@ if($isSubmitted && count($errors) == 0) {
                         </div>
                         <div id="force" class="small text-secondary">Faible</div>
                     </div>
-                    <p class="error text-danger"><?= $errors['password'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['password'] ?? ''?></p>
                 </div>
 
                 <!-- Confirmation du mot de passe. -->
                 <div class="form-group m-3 col-9">
                     <label for="passwordConfirmation">Confimation du mot de passe</label>
                     <input type="password" class="form-control" id="passwordConfirmation" name="passwordConfirmation"
-                        value="<?= $passwordConfirmation ?>" placeholder="Mdp1234">
-                    <p class="error text-danger"><?= $errors['passwordConfirmation'] ?? '' ?></p>
+                        value="<?=$passwordConfirmation?>" placeholder="Mdp1234">
+                    <p class="error text-danger"><?=$errors['passwordConfirmation'] ?? ''?></p>
                 </div>
 
             </div>
@@ -223,7 +228,7 @@ if($isSubmitted && count($errors) == 0) {
                             j'autorise que les informations saisies dans ce formulaire soient
                             utilisées pour permettre de me reconnecter ultérieurement.</label>
                     </div>
-                    <p class="error text-danger"><?= $errors['cgu'] ?? '' ?></p>
+                    <p class="error text-danger"><?=$errors['cgu'] ?? ''?></p>
                 </div>
             </div>
 
@@ -315,4 +320,4 @@ if($isSubmitted && count($errors) == 0) {
 
     <!-- Insertion du footer.  -->
 
-    <?php include 'footer.php'; ?>
+    <?php include 'footer.php';?>
