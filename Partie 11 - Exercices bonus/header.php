@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice1">Inscription</a>
+                    <a class="nav-link" href="../inscription">Inscription</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Exercice2">Données cookies</a>

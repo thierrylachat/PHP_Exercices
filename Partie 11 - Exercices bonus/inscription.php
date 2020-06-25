@@ -14,19 +14,22 @@ A la validation du formulaire, afficher le formulaire et les messages d'erreurs 
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-$titre = 'Exercice1';
+$titre = 'Inscription';
 include 'header.php';
 ?>
 
 <?php
+
 
 // Déclaration de REGEX.
 $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
 $regexBirthday = '/^((?:19|20)[0-9]{2})-((?:0[1-9])|(?:1[0-2]))-((?:0[1-9])|(?:1[0-9])|(?:2[0-9])|(?:3[01]))$/';
 $regexPassword = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}/';
 
+
 // Validation du formulaire.
 $isSubmitted = false;
+
 
 // Déclaration de variables.
 $civility = '';
@@ -40,11 +43,14 @@ $cgu = '';
 $errors = [];
 $post = [];
 
+
 // Soumission du formulaire.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isSubmitted = true;
 
+
 // Nettoyage des variables, vérification que les variables sont remplies et qu'elles correspondent aux REGEX.
+
 
     // Civilité.
     $civility = trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
@@ -53,7 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif ($civility != 1 && $civility != 2) {
         $errors['civility'] = 'La donnée saisie n\'est pas correcte';
     }
-    array_push($post,$civility);
+    array_push($post, $civility);
+
 
     // Prénom.
     $firstName = trim(filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING));
@@ -62,7 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!preg_match($regexNames, $firstName)) {
         $errors['firstName'] = 'Le format attendu n\'est pas respecté';
     }
-    array_push($post,$firstName);
+    array_push($post, $firstName);
+
 
     // Nom.
     $lastName = trim(filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING));
@@ -71,40 +79,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!preg_match($regexNames, $lastName)) {
         $errors['lastName'] = 'Le format attendu n\'est pas respecté';
     }
-    array_push($post,$lastName);
+    array_push($post, $lastName);
+
 
     // Date de naissance.
     $birthday = trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
     if (!empty($birthday)) {
-
 
         // Création du timestamp d'aujourd'hui.
         $today = strtotime("NOW");
         // Timestamp de mon input date.
         $convertBirthday = strtotime($birthday);
         if (!preg_match($regexBirthday, $birthday)) {
-            $errors['birthday'] = 'Veuillez renseigner une date correcte';
+            $errors['birthday'] = 'Le format attendu n\'est pas respecté';
         }
-        // Vérification que la date reste inférieure à NOW.
+        // Vérification que la date de naissance reste inférieure à NOW.
         elseif ($convertBirthday > $today) {
-            $errors['birthday'] = 'Votre date ne peut pas être supérieur à la date du jour';
+            $errors['birthday'] = 'Votre date de naissance ne peut pas être supérieure à la date du jour';
         }
-    }
-    else{
+    } else {
         $errors['birthday'] = 'Veuillez renseigner votre date de naissance';
     }
-    $birthday = preg_replace($regexBirthday,'$3/$2/$1',$birthday);
-        array_push($post,$birthday);
+    // Conversion de la date au format français avec création d'un tableau $post et des fonctions array_push.
+    $birthday = preg_replace($regexBirthday, '$3/$2/$1', $birthday);
+    array_push($post, $birthday);
+
 
     // Adresse email.
     $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
     if (empty($email)) {
-        $errors['email'] = 'Merci de renseigner correctement votre adresse électronique.';
+        $errors['email'] = 'Merci de renseigner votre adresse électronique.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Le format attendu 
-        n\'est pas respecté.';
+        $errors['email'] = 'Le format attendu n\'est pas respecté.';
     }
-    array_push($post,$email);
+    array_push($post, $email);
+
 
     // Password.
     $password = $_POST['password'];
@@ -114,20 +123,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif ($password != $passwordConfirmation) {
         $errors['password'] = 'Vos mots de passe ne correspondent pas.';
     } elseif (!preg_match($regexPassword, $password)) {
-        $errors['password'] = 'Votre mot de passe doit contenir au minimum 8 caractères(majuscule,minuscule,chiffre et caractère special)';
+        $errors['password'] = 'Votre mot de passe doit contenir au minimum 8 caractères (majuscule, minuscule, chiffre et caractère special)';
     }
-    array_push($post,$password);
-    array_push($post,$passwordConfirmation);
+    array_push($post, $password);
+    array_push($post, $passwordConfirmation);
+
 
     // CGU.
+    // isset — Détermine si une variable est déclarée et est différente de NULL.
     if (!isset($_POST['cgu'])) {
         $errors['cgu'] = 'Vous devez accepter nos conditions générales d\'utilisation pour vous inscrire.';
     }
-    array_push($post,$_POST['cgu']);
+    array_push($post, $_POST['cgu']);
 }
 
-// Création du cookie.
 
+// Création du cookie avant le HTML.
 if (count($errors) == 0) {
     // Transformation du tableau POST en chaîne de caractères.
     $user = serialize($post);
@@ -136,28 +147,21 @@ if (count($errors) == 0) {
 }
 
 // Affichage de l'alerte de création de compte si le formulaire est soumis et qu'il n'y a pas d'erreurs.
+if ($isSubmitted && count($errors) == 0) { ; ?>
+<div class="alert alert-success" role="alert">Votre compte a été créé avec succés.</div>
+<?php } ;?>
 
-if ($isSubmitted && count($errors) == 0) {
 
-    ?>
-
-<div class="alert alert-success" role="alert">Votre compte a été créé avec succès.</div>
-
-<?php
-}
-?>
-
-<!-- Création du titre du formulaire. -->
-
+<!-- Création du formulaire. -->
 
 <div class="container d-flex justify-content-center">
 
-    <!-- Création du titre du formulaire. -->
-
     <div class="m-4 p-4 col-9 card border border-secondary bg-secondary">
-        <form method="post" action="Exercice1.php">
+        <form method="post" action="inscription.php">
 
             <h1 class="m-4 p-4 font-weight-bold h2 text-center">Formulaire d'inscription</h1>
+
+            <!-- Création de la rubrique "Identité". -->
             <h2 class="h4 m-3">Identité</h2>
             <div class="row justify-content-around">
 
@@ -165,8 +169,8 @@ if ($isSubmitted && count($errors) == 0) {
                 <div class="form-group m-3 col-4">
                     <label for="civility">Civilité</label>
                     <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio1" name="civility" class="custom-control-input"
-                            checked="" value="1">
+                        <input type="radio" id="customRadio1" name="civility" class="custom-control-input" checked=""
+                            value="1">
                         <label class="custom-control-label" for="customRadio1">Monsieur</label>
                     </div>
                     <div class="custom-control custom-radio">
@@ -205,6 +209,7 @@ if ($isSubmitted && count($errors) == 0) {
 
             </div>
 
+            <!-- Création de la rubrique "Identifiants de connexion". -->
             <h2 class="h4 m-3">Identifiants de connexion</h2>
             <div class="row justify-content-around">
 
