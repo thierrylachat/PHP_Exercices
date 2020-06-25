@@ -1,4 +1,22 @@
+<?php session_start();?>
 <!-- Mise en place du header à inclure dans chaque fichier PHP. -->
+
+<?php
+	
+	if (isset($_GET['logout'])) {
+		// Vidage du tableau session.
+		$_SESSION['user'] = [];
+		// Vidage de la variable session.
+		unset($_SESSION['user']);
+		// Destruction de la session.
+		session_destroy();
+	}
+
+	if (!empty($_POST['login']) && !empty($_POST['password'])) {
+		$_SESSION['user'] = ['auth' => true, 'login' => $_POST['login']];
+	}
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -6,9 +24,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title><?= $titre ?></title>
+    <title><?=$titre?></title>
 </head>
 
 <body>
@@ -29,15 +48,40 @@
                     <a class="nav-link" href="../Exercice2">Données cookies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice 3">Exercice 3</a>
+                    <a class="nav-link" href="../Exercice4">Admin</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../Exercice 4">Exercice 4</a>
+
+                <?php
+// Affichage du lien de connexion si la session est absente.
+if (!isset($_SESSION['user'])) {
+    ?>
+                <li class="mr-3 nav-item">
+                    <a class="nav-link" href="Exercice3.php">Me connecter</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../exercice 5">Exercice 5</a>
+                <?php
+}
+// Sinon affichage du bouton de deconnexion.
+else {
+    ?>
+                <li class="mr-3 nav-item">
+                    <!-- le $_GET logout sert à déclencher la deconnexion -->
+                    <a class="btn btn-outline-light" href="Exercice3.php?logout=true">Se déconnecter</a>
                 </li>
+                <?php
+}
+?>
+
+            </ul>
+            <?php
+if (isset($_SESSION['user'])) {
+    ?>
+            <div class="ml-auto border border-light rounded-circle text-light d-flex">
+                <span class="m-auto"><?=/* Première lettre en MAJ */ucfirst($_SESSION['user']['login'])[0]?></span>
+            </div>
+            <?php
+}
+?>
             </ul>
         </div>
+
     </nav>
-    
