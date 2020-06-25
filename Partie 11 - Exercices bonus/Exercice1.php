@@ -38,6 +38,7 @@ $password = '';
 $passwordConfirmation = '';
 $cgu = '';
 $errors = [];
+$post = [];
 
 // Soumission du formulaire.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -52,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif ($civility != 1 && $civility != 2) {
         $errors['civility'] = 'La donnée saisie n\'est pas correcte';
     }
+    array_push($post,$civility);
 
     // Prénom.
     $firstName = trim(filter_input(INPUT_POST, 'firstName', FILTER_SANITIZE_STRING));
@@ -60,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!preg_match($regexNames, $firstName)) {
         $errors['firstName'] = 'Le format attendu n\'est pas respecté';
     }
+    array_push($post,$firstName);
 
     // Nom.
     $lastName = trim(filter_input(INPUT_POST, 'lastName', FILTER_SANITIZE_STRING));
@@ -68,22 +71,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!preg_match($regexNames, $lastName)) {
         $errors['lastName'] = 'Le format attendu n\'est pas respecté';
     }
+    array_push($post,$lastName);
 
     // Date de naissance.
     $birthday = trim(filter_input(INPUT_POST, 'birthday', FILTER_SANITIZE_STRING));
-    if (empty($birthday)) {
-        $errors['birthday'] = 'Merci de renseigner votre date de naissance.';
-    } elseif (!preg_match($regexBirthday, $birthday)) {
-        $errors['birthday'] = 'Le format attendu n\'est pas respecté.';
+    if (!empty($birthday)) {
+
+
+        // Création du timestamp d'aujourd'hui.
+        $today = strtotime("NOW");
+        // Timestamp de mon input date.
+        $convertBirthday = strtotime($birthday);
+        if (!preg_match($regexBirthday, $birthday)) {
+            $errors['birthday'] = 'Veuillez renseigner une date correcte';
+        }
+        // Vérification que la date reste inférieure à NOW.
+        elseif ($convertBirthday > $today) {
+            $errors['birthday'] = 'Votre date ne peut pas être supérieur à la date du jour';
+        }
     }
+    else{
+        $errors['birthday'] = 'Veuillez renseigner votre date de naissance';
+    }
+    $birthday = preg_replace($regexBirthday,'$3/$2/$1',$birthday);
+        array_push($post,$birthday);
 
     // Adresse email.
     $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING));
     if (empty($email)) {
         $errors['email'] = 'Merci de renseigner correctement votre adresse électronique.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Le format attendu n\'est pas respecté.';
+        $errors['email'] = 'Le format attendu 
+        n\'est pas respecté.';
     }
+    array_push($post,$email);
 
     // Password.
     $password = $_POST['password'];
@@ -95,19 +116,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!preg_match($regexPassword, $password)) {
         $errors['password'] = 'Votre mot de passe doit contenir au minimum 8 caractères(majuscule,minuscule,chiffre et caractère special)';
     }
+    array_push($post,$password);
+    array_push($post,$passwordConfirmation);
 
     // CGU.
     if (!isset($_POST['cgu'])) {
         $errors['cgu'] = 'Vous devez accepter nos conditions générales d\'utilisation pour vous inscrire.';
     }
-
+    array_push($post,$_POST['cgu']);
 }
 
 // Création du cookie.
 
 if (count($errors) == 0) {
     // Transformation du tableau POST en chaîne de caractères.
-    $user = serialize($_POST);
+    $user = serialize($post);
     // Création du cookie avec la chaîne des POST.
     setcookie('user', $user, time() + 3600, '/', '', false, false);
 }
@@ -172,7 +195,7 @@ if ($isSubmitted && count($errors) == 0) {
                     <p class="error text-danger"><?=$errors['firstName'] ?? ''?></p>
                 </div>
 
-                <!-- Affichage de l'âge.  -->
+                <!-- Affichage de la date de naissance.  -->
                 <div class="form-group m-3 col-4">
                     <label for="birthday">Date de naissance</label>
                     <input type="date" class="form-control" id="birthday" name="birthday" value="<?=$birthday?>"

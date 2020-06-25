@@ -23,10 +23,10 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice1">Exercice 1</a>
+                    <a class="nav-link" href="../Exercice1">Inscription</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice 2">Exercice 2</a>
+                    <a class="nav-link" href="../Exercice2">Données cookies</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Exercice 3">Exercice 3</a>
