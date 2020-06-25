@@ -14,7 +14,7 @@ Créer un page administration, elle ne doit être accessible que pour un utilisa
 
 if (!isset($_SESSION['user'])) {
 		// redirection si pas connecté.
-		header('location: Exercice3.php');
+		header('location: login.php');
 		// stop la lecture du script.
 		exit();
 	}

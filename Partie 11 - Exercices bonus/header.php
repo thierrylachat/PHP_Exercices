@@ -65,7 +65,7 @@ else {
     ?>
                 <li class="mr-3 nav-item">
                     <!-- le $_GET logout sert à déclencher la deconnexion -->
-                    <a class="btn btn-outline-light" href="Exercice3.php?logout=true">Se déconnecter</a>
+                    <a class="btn btn-outline-light" href="login.php?logout=true">Se déconnecter</a>
                 </li>
                 <?php
 }

@@ -260,9 +260,9 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
                 </div>
             </div>
 
-            <div class="row m-5 justify-content-around">
-                <button type="submit" class="btn btn-success btn-lg col-4">Valider</button>
-            </div>
+            <div class="w-100 d-flex">
+				<button class="mx-auto btn btn-outline-dark rounded-pill m-4" type="submit">Me connecter</button>
+			</div>
 
     </div>
 
@@ -320,7 +320,7 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
                     }
                 }
             }
-            
+
             document.getElementById('progress').style.backgroundColor = bgColor;
             document.getElementById('progress').style.width = 25 * force + '%';
 
