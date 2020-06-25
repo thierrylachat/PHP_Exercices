@@ -267,40 +267,40 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
     </div>
 
     <script src="jquery.js"></script>
+
     <script type="text/javascript">
+
+        // Création de la force du password.
         $("input[name='password']").keyup(function () {
-            // prend la value du selecteur choisi précédement
+            // Prend la value du selecteur choisi précédement.
             var password = $(this).val();
             var force = 0;
 
-            // vérifie que la regex est true ou false
+            // Vérification que la regex est true ou false.
             // var regex = (/(?=.*[a-z])/).test(password);
 
-            // vérifie que la value de l'input contient des lettres
-            // Si c'est le cas, la force prend +1
+            // Vérification que la value de l'input contient des lettres.
+            // Si c'est le cas, la force prend +1.
             if (password.match(/(?=.*[a-z])/) || password.match(/(?=.*[A-Z])/)) {
                 force++;
             }
-
-            // vérifie que la value de l'input contient des chiffres
+            // Vérification que la value de l'input contient des chiffres.
             if (password.match(/(?=.*[0-9])/)) {
                 force++;
             }
-
-            // vérifie que la value de l'input contient des caractères spéciaux
+            // Vérification que la value de l'input contient des caractères spéciaux.
             if (password.match(/(?=.*\W)/)) {
                 force++;
             }
-
-
-            // vérifie que le password contient au moins 8 caractères
+            // Vérification que le password contient au moins 8 caractères.
             if (password.length >= 8) {
                 force++;
             }
 
-            // couleur en fonction de la force
+            // Détermination du texte en fonction de la force.
             var textForce = $("#force");
-            // couleur et texte en fonction de la force
+
+            // Détermination de la couleur et du texte en fonction de la force.
             if (force == 1) {
                 var bgColor = '#dc3545';
                 textForce.text('Faible');
@@ -320,6 +320,7 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
                     }
                 }
             }
+            
             document.getElementById('progress').style.backgroundColor = bgColor;
             document.getElementById('progress').style.width = 25 * force + '%';
 
@@ -331,11 +332,13 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
             	'background-color': bgColor
             }); */
         })
-        // fait disparaitre la progressbar quand on quitte le champ password
+
+        // Disparition de la progressbar quand on quitte le champ password.
         $("input[name='password']").blur(function () {
             $("#forcePassword").slideUp();
         })
-        // Fait apparaitre la progressbar quand on focus le champ password
+
+        // Apparition de la progressbar quand on focus le champ password.
         document.querySelector(`input[name="password"]`).addEventListener('focus', function () {
             let forcePassword = $("#forcePassword").slideDown();
         })
@@ -343,6 +346,7 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
         /* $("input[name='password']").focus(function(){
         	$("#forcePassword").slideDown();
         }) */
+
     </script>
 
 

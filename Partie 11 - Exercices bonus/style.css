@@ -1,17 +1,15 @@
-/* Mise en forme du formulaire. */
+/* Mise en forme du formulaire d'inscription. */
 .card {
     background-color: #A1CCCA !important;
     font-size: 15px;
 }
 
-
-/* Mise en forme du bouton. */
 .btn {
     font-size: 18px;
 }
 
 
-/* Mise en forme de la force progress du password. */
+/* Mise en forme de la force progress du password du formulaire. */
 #forcePassword{
     display: none;
     margin-top: 1rem;
