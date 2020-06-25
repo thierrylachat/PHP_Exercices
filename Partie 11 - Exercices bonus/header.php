@@ -45,7 +45,7 @@
                     <a class="nav-link" href="../inscription">Inscription</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice2">Données cookies</a>
+                    <a class="nav-link" href="../user">Données cookies</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Exercice4">Admin</a>
@@ -56,7 +56,7 @@
 if (!isset($_SESSION['user'])) {
     ?>
                 <li class="mr-3 nav-item">
-                    <a class="nav-link" href="Exercice3.php">Me connecter</a>
+                    <a class="nav-link" href="login.php">Me connecter</a>
                 </li>
                 <?php
 }

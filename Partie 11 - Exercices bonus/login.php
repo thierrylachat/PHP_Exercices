@@ -7,13 +7,13 @@ Dans chaque page, si l'utilisateur est connecté, afficher la première lettre d
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice3';
+    $titre= 'Me connecter';
     include 'header.php';
 ?>
 
 	<div class="container">
 		<div class="p-3 w-100">
-			<form action="Exercice3.php" method="POST">
+			<form action="login.php" method="POST">
 				<fieldset class="p-3 border border-dark">
 					<legend>Me connecter</legend>
 					<div class="form-group">
