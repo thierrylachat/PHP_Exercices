@@ -1,6 +1,6 @@
 <?php session_start();?>
 
-<!-- Déstruction de la session en cas de déconnexion & création d'une session utilsateur. -->
+<!-- Destruction de la session en cas de déconnexion & création d'une session utilisateur. -->
 
 <?php
 
@@ -63,7 +63,7 @@ if (!empty($_POST['login']) && !empty($_POST['password'])) {
             <?php
             }
 
-            // Sinon affichage du bouton de déconnexion.
+            // Sinon affichage du bouton de déconnexion si une session est ouverte.
             else {
             ?>
                 <li class="mr-3 nav-item">
