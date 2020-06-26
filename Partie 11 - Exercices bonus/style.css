@@ -1,6 +1,6 @@
-/* INSCRIPTION : Mise en forme du formulaire d'inscription et de connexion. */
+/* INSCRIPTION : Mise en forme du formulaire d'inscription. */
 
-.card {
+.card-inscription {
     background-color: #A1CCCA !important;
     font-size: 15px;
 }
@@ -42,14 +42,30 @@
     margin-top: 3em;
 }
 
+
 /* LOGIN : Mise en forme du bouton se déconnecter. */
+
 .btn-logout {
     font-size: 14px;
 }
 
-/* LOGIN : Mise en forme du login. */
+
+/* LOGIN : Mise en forme de l'icône login. */
 .icon {
     font-size: 1.8em;
     height: 1.8em;
     width: 1.8em;
+}
+
+
+/* LOGIN : Mise en forme du formulaire de login. */
+
+.card-login {
+    background-color: #A1CCCA !important;
+    font-size: 15px;
+}
+
+
+.btn-login {
+    font-size: 18px;
 }

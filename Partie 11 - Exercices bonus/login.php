@@ -14,7 +14,7 @@ include 'header.php';
 <!-- Création du formulaire de connexion. -->
 
 <div class="container h-100 d-flex justify-content-center mt-4">
-	<div class="m-4 col-8 card bg-secondary border border-dark">
+	<div class="m-4 col-8 card-login bg-secondary border border-dark">
 		<form action="login.php" method="POST">
 			<div class="p-3">
 
@@ -31,7 +31,7 @@ include 'header.php';
 						placeholder="&#128272; Votre mot de passe">
 				</div>
 				<div class="w-100 d-flex">
-					<button class="mx-auto btn btn-outline-dark rounded-pill m-3" type="submit">Me connecter</button>
+					<button class="mx-auto btn btn-outline-dark rounded-pill m-3 btn-login" type="submit">Me connecter</button>
 				</div>
 			</div>
 		</form>
