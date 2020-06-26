@@ -1,20 +1,21 @@
 <?php session_start();?>
-<!-- Mise en place du header à inclure dans chaque fichier PHP. -->
+
+<!-- Déstruction de la session en cas de déconnexion & création d'une session utilsateur. -->
 
 <?php
-	
-	if (isset($_GET['logout'])) {
-		// Vidage du tableau session.
-		$_SESSION['user'] = [];
-		// Vidage de la variable session.
-		unset($_SESSION['user']);
-		// Destruction de la session.
-		session_destroy();
-	}
 
-	if (!empty($_POST['login']) && !empty($_POST['password'])) {
-		$_SESSION['user'] = ['auth' => true, 'login' => $_POST['login']];
-	}
+if (isset($_GET['logout'])) {
+    // Vidage du tableau session.
+    $_SESSION['user'] = [];
+    // Vidage de la variable session.
+    unset($_SESSION['user']);
+    // Destruction de la session.
+    session_destroy();
+}
+
+if (!empty($_POST['login']) && !empty($_POST['password'])) {
+    $_SESSION['user'] = ['auth' => true, 'login' => $_POST['login']];
+}
 
 ?>
 
@@ -51,36 +52,41 @@
                     <a class="nav-link" href="../Exercice4">Admin</a>
                 </li>
 
-                <?php
-// Affichage du lien de connexion si la session est absente.
-if (!isset($_SESSION['user'])) {
-    ?>
+
+            <!-- Affichage du lien de connexion si la session est absente. -->
+            <?php   
+            if (!isset($_SESSION['user'])) {
+            ?>
                 <li class="mr-3 nav-item">
                     <a class="nav-link" href="login.php">Me connecter</a>
                 </li>
-                <?php
-}
-// Sinon affichage du bouton de deconnexion.
-else {
-    ?>
+            <?php
+            }
+
+            // Sinon affichage du bouton de déconnexion.
+            else {
+            ?>
                 <li class="mr-3 nav-item">
-                    <!-- le $_GET logout sert à déclencher la deconnexion -->
-                    <a class="btn btn-outline-light" href="login.php?logout=true">Se déconnecter</a>
+                <!-- le $_GET logout sert à déclencher la déconnexion -->
+                    <a class="btn btn-outline-light btn-logout" href="login.php?logout=true">Se déconnecter</a>
                 </li>
-                <?php
-}
-?>
+            <?php
+            }
+            ?>
 
             </ul>
+
+            <!--  Création de l'icône avec la première lettre de l'utilisateur si une session est ouverte.-->
             <?php
-if (isset($_SESSION['user'])) {
-    ?>
-            <div class="ml-auto border border-light rounded-circle text-light d-flex">
+            if (isset($_SESSION['user'])) {
+            ?>
+            <div class="border border-light rounded-circle text-light d-flex icon">
                 <span class="m-auto"><?=/* Première lettre en MAJ */ucfirst($_SESSION['user']['login'])[0]?></span>
             </div>
             <?php
-}
-?>
+            }
+            ?>
+
             </ul>
         </div>
 
