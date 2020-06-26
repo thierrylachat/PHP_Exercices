@@ -156,7 +156,7 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
 
 <div class="container d-flex justify-content-center">
 
-    <div class="m-4 p-4 col-9 card border border-secondary bg-secondary">
+    <div class="m-4 p-4 col-9 card border border-dark bg-secondary">
         <form method="post" action="inscription.php">
 
             <h1 class="m-4 p-4 font-weight-bold h2 text-center">Formulaire d'inscription</h1>

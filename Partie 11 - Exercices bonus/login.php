@@ -11,21 +11,29 @@ $titre = 'Me connecter';
 include 'header.php';
 ?>
 
-<div class="container d-flex justify-content-center">
-	<div class="m-4 p-4 col-8 card border border-secondary bg-secondary">
+<!-- Création du formulaire de connexion. -->
+
+<div class="container h-100 d-flex justify-content-center mt-4">
+	<div class="m-4 col-8 card bg-secondary border border-dark">
 		<form action="login.php" method="POST">
-			<fieldset class="p-3 border border-dark">
-				<legend>Me connecter</legend>
-				<div class="form-group">
+			<div class="p-3">
+
+				<h2 class="h4 m-4">Me connecter</h2>
+				<!-- Avatar. -->
+				<img class="img-fluid" id="avatar" src="avatar.png" alt="Dessin d'avatar">
+				<!-- Adresse mail. -->
+				<div class="form-group p-1">
 					<input class="form-control" type="text" name="login" placeholder="&#128100; Votre adresse email">
 				</div>
-				<div class="form-group">
-					<input class="form-control" type="password" name="password" placeholder="&#128272; Votre mot de passe">
+				<!-- Mot de passe. -->
+				<div class="form-group p-1">
+					<input class="form-control" type="password" name="password"
+						placeholder="&#128272; Votre mot de passe">
 				</div>
 				<div class="w-100 d-flex">
-					<button class="mx-auto btn btn-outline-dark rounded-pill" type="submit">Me connecter</button>
+					<button class="mx-auto btn btn-outline-dark rounded-pill m-3" type="submit">Me connecter</button>
 				</div>
-			</fieldset>
+			</div>
 		</form>
 	</div>
 </div>
