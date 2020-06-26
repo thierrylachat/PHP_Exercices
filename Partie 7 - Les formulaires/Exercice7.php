@@ -14,7 +14,7 @@ include 'header.php';
 
 <?php
 if ((!empty($_POST['civility'])) && (!empty($_POST['firstName'])) && (!empty($_POST['lastName'])) && (!empty($_FILES['pictSending']))) {?>
- <p><?= $_POST['civility'].' '.$_POST['firstName'].' '.$_POST['lastName'].', vous avez envoyé le fichier '.$_FILES['pictSending']['name']; ?></p>
+ <p><?= $_POST['civility'].' '.$_POST['firstName'].' '.$_POST['lastName'].', vous avez envoyé le fichier '.$_FILES['pictSending']['name'].'.'; ?></p>
 <?php } else {?>
 
 <div class="m-4 p-4 col-4 border border-secondary">
