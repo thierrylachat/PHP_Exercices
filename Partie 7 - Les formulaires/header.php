@@ -41,7 +41,7 @@
                     <a class="nav-link" href="../Exercice6">Exercice 6</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice 7">Exercice 7</a>
+                    <a class="nav-link" href="../Exercice7">Exercice 7</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../Exercice 8">Exercice 8</a>
