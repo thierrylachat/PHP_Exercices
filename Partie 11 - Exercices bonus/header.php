@@ -49,7 +49,7 @@ if (!empty($_POST['login']) && !empty($_POST['password'])) {
                     <a class="nav-link" href="../user">Données cookies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Exercice4">Admin</a>
+                    <a class="nav-link" href="../admin">Admin</a>
                 </li>
 
 

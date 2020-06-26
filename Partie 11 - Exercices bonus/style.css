@@ -1,11 +1,11 @@
-/* INSCRIPTION : Mise en forme du formulaire d'inscription. */
+/* INSCRIPTION : Mise en forme du formulaire d'inscription et de connexion. */
 
 .card {
     background-color: #A1CCCA !important;
     font-size: 15px;
 }
 
-.btn {
+.btn-inscription {
     font-size: 18px;
 }
 

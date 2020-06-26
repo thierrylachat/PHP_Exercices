@@ -250,7 +250,7 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
                 <div class="form-check">
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="cgu" type="checkbox" value="cgu"
+                        <input type="checkbox" class="custom-control-input" name="cgu" value="cgu"
                             id="cgu">
                         <label class="custom-control-label font-weight-bold" for="cgu">En soumettant ce formulaire,
                             j'autorise que les informations saisies dans ce formulaire soient
@@ -261,7 +261,7 @@ if ($isSubmitted && count($errors) == 0) { ; ?>
             </div>
 
             <div class="w-100 d-flex">
-				<button class="mx-auto btn btn-outline-dark rounded-pill m-4" type="submit">Me connecter</button>
+				<button class="mx-auto btn btn-outline-dark btn-inscription rounded-pill m-4" type="submit">Me connecter</button>
 			</div>
 
     </div>
