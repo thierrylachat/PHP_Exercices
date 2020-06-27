@@ -1,23 +1,23 @@
-<!-- Enoncé : 
-Faire un formulaire qui permet de récupérer le login et le mot de passe de l'utilisateur. 
+<!-- Enoncé :
+Faire un formulaire qui permet de récupérer le login et le mot de passe de l'utilisateur.
 A la validation du formulaire, stocker les informations dans un cookie. -->
 
 
-<!-- Création du cookie à mettre avant le HTML impérativement. -->
-<?php 
+<!-- Création du cookie à mettre AVANT le HTML impérativement. -->
+<?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Vérification des données pour les cookies.
     $login = $_POST['login'];
-    $passWord = $POST['passWord'];
+    $password = $_POST['password'];
 
     // Stockage des données dans les cookies.
-    // Le / indique une portée générale pour le cookie. 
-    setcookie('login', $login, time() + 365*24*3600, '/', '', false, false) ;
-    setcookie('passWord', $passWord, time() + 365*24*3600, '/', '', false, false) ;
+    // setcookie envoie un cookie et sa synthaxe est setcookie(name, value, expire, path, domain, secure, httponly).
+    // Le / indique une portée générale pour le cookie.
+    setcookie('login', $login, time() + 365 * 24 * 3600, '/', '', false, false);
+    setcookie('password', $password, time() + 365 * 24 * 3600, '/', '', false, false);
 
 }
-var_dump($_COOKIE);
 
 ?>
 
@@ -25,9 +25,10 @@ var_dump($_COOKIE);
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-    $titre= 'Exercice 3';
-    include 'header.php';
+$titre = 'Exercice 3';
+include 'header.php';
 ?>
+
 
 <!-- Création du formulaire demandant le login et le mot de passe avec la méthode post. -->
 
@@ -35,17 +36,23 @@ var_dump($_COOKIE);
     <form method="post" action="">
         <p class="font-weight-bold text-center text-uppercase">Formulaire d'identification</p>
         <div class="form-group">
-            <label for="formGroupExampleInput">Login</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="login" placeholder="M@teo21">
+            <label for="login">Login</label>
+            <input type="text" class="form-control" id="login" name="login" placeholder="M@teo21">
         </div>
         <div class="form-group">
-            <label for="formGroupExampleInput2">Mot de passe</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="passWord" placeholder="passWord">
+            <label for="password">Mot de passe</label>
+            <input type="text" class="form-control" id="password" name="password" placeholder="password">
         </div>
         <button type="submit" class="btn btn-success">Valider</button>
     </form>
 </div>
 
+
+<!-- Affichage des données du cookie. -->
+
+<?php var_dump($_COOKIE);?>
+
+
 <!-- Insertion du footer. -->
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
