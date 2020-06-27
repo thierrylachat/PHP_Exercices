@@ -36,7 +36,7 @@ function build_calendar($month, $year)
     $dateComponents = getdate($firstDayOfMonth);
 
     // Recherche du nom du mois en question.
-    $monthName = $dateComponents['mon'];
+    $monthName = $dateComponents['month'];
 
     // Recherche de la valeur de l'index (0-6) du premier jour du mois en question.
     $dayOfWeek = $dateComponents['wday'];
