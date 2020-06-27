@@ -10,21 +10,21 @@ include 'header.php';
 ?>
 
 
-<nav class= "navbar navbar-dark bg-dark mt-3 mb-3">
-    <a href="/TP.php" class="navbar-brand">Mon calendrier</a>
+<nav class="navbar navbar-dark bg-dark mt-3 mb-3">
+    <a href="/TP2.php" class="navbar-brand">Mon calendrier</a>
 </nav>
 
 
 <?php
 
+function build_calendar($month, $year)
+{
 
-function build_calendar($month, $year) {
-
-    // Création d'un tableau contenant les abbréviations des ours du mois.
+    // Création d'un tableau contenant les abbréviations des jours du mois.
     $daysOfWeek = array('S', 'M', 'T', 'W', 'T', 'F', 'S');
 
     // Recherche du premier jour du mois en question.
-    // mktime(hour, minute, second, month, day, year, is_dst).
+    // mktime(hour, minute, second, month, day, year).
     $firstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
 
     // Recherche du nombre de jours que le mois contient.
@@ -42,24 +42,25 @@ function build_calendar($month, $year) {
     $dayOfWeek = $dateComponents['wday'];
 
     // Création du tableau.
-    $calendar = "<table class ='calendar'>";
+    $calendar = "<table class='calendar'>";
     $calendar .= "<caption>$monthName $year</caption>";
     $calendar .= "<tr>";
 
     // Création des headers du calendrier.
     foreach ($daysOfWeek as $day) {
-        $calendar .= "<th class = 'header'>$day</th>";
+        $calendar .= "<th class='header'>$day</th>";
     }
 
     // Création du reste du tableau.
 
     // Initialisation du compteur de jour commençant par le 1°.
     $currentDay = 1;
+
     $calendar .= "</tr><tr>";
 
     // La variable $dayOfWeeks est utilisée pour s'assurer que le calendrier comprend 7 colonnes.
     if ($dayOfWeek > 0) {
-        $calendar .= "<td colspan= '$dayOfWeek'>&nbsp;</td>";
+        $calendar .= "<td colspan='$dayOfWeek'>&nbsp;</td>";
     }
 
     $month = str_pad($month, 2, "0", STR_PAD_LEFT);
@@ -72,6 +73,7 @@ function build_calendar($month, $year) {
 
             $dayOfWeek = 0;
             $calendar .= "</tr><tr>";
+
         }
 
         $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
@@ -87,12 +89,13 @@ function build_calendar($month, $year) {
 
     }
 
-// Remplissage de la ligne avec la dernière semaine du mois, si nécessaire.
+    // Remplissage de la ligne avec la dernière semaine du mois, si nécessaire.
 
     if ($dayOfWeek != 7) {
 
         $remainingDays = 7 - $dayOfWeek;
-        $calendar = "<td colspan= '$remainingDays'>&nbsp;</td>";
+        $calendar .= "<td colspan='$remainingDays'>&nbsp;</td>";
+
     }
 
     $calendar .= "</tr>";
@@ -107,12 +110,12 @@ function build_calendar($month, $year) {
 
 <?php
 
-    $dateComponents = getdate();
+$dateComponents = getdate();
 
-    $month = $dateComponents['mon']; 			     
-    $year = $dateComponents['year'];
+$month = $dateComponents['mon'];
+$year = $dateComponents['year'];
 
-    echo build_calendar($month, $year);
+echo build_calendar($month, $year);
 
 ?>
 
