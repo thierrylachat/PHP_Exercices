@@ -49,7 +49,7 @@
                     <a class="nav-link" href="../TP">TP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../TP">TP2</a>
+                    <a class="nav-link" href="../TP2">TP2</a>
                 </li>
             </ul>
         </div>
