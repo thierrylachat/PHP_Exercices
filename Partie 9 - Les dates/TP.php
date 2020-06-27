@@ -11,54 +11,60 @@ include 'header.php';
 
 
 <?php
-$titre = 'Caalendrier';
+$titre = 'Calendrier';
 $months = [1 => 'Janvier', 2 => 'Février', 3 => 'Mars', 4 => 'Avril', 5 => 'Mai', 6 => 'Juin', 7 => 'Juillet', 8 => 'Août', 9 => 'septembre', 10 => 'octobre', 11 => 'novembre', 12 => 'décembre'];
 $weekDays = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+// La paramètre Y renvoie l'année sur 4 chiffres. 
 $selectedYear = $_GET['year'] ?? date('Y');
+// Le paramètre n renvoie le mois sans les zéros initiaux.
 $selectedMonthNumber = $_GET['month'] ?? date('n');
 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $selectedMonthNumber, $selectedYear);
-$firstDay = date('N' ,mktime(0, 0, 0, $selectedMonthNumber, 1, $selectedYear));
+// Le paramètre N renvoie est la représentation numérique du jour de la semaine (1 jusqu'à 7).
+// La syntaxe de mktime est : mktime(hour, minute, second, month, day, year).
+$firstDay = date('N', mktime(0, 0, 0, $selectedMonthNumber, 1, $selectedYear));
 ?>
 
 
-<!-- creation du formulaire -->
+<!-- Création du formulaire. -->
+
 <form action="" method="get">
     <label for="month">Mois :</label>
     <select name="month" id="month">
-        <?php foreach ($months as $monthNumber => $month) : ?>
-            <option value="<?= $monthNumber ?>" <?= $selectedMonthNumber == $monthNumber ? 'selected' : ''; ?>>
-                <?= $month ?>
-            </option>
-        <?php endforeach; ?>
+        <?php foreach ($months as $monthNumber => $month): ?>
+        <option value="<?=$monthNumber?>" <?=$selectedMonthNumber == $monthNumber ? 'selected' : '';?>>
+            <?=$month;?>
+        </option>
+        <?php endforeach;?>
     </select>
     <label for="year">Année :</label>
     <select name="year" id="year">
-        <?php for ($year = 1900; $year <= 2100; $year++) : ?>
-            <option value="<?= $year ?>" <?= $selectedYear == $year ? 'selected' : ''; ?>>
-                <?= $year ?>
-            </option>
-        <?php endfor; ?>
+        <?php for ($year = 1900; $year <= 2100; $year++): ?>
+        <option value="<?=$year?>" <?=$selectedYear == $year ? 'selected' : '';?>>
+            <?=$year?>
+        </option>
+        <?php endfor;?>
     </select>
     <input type="submit" value="valider">
 </form>
 
 
-<!-- affichage du tableau -->
+<!-- Affichage du tableau. -->
+
 <table>
     <thead>
         <tr>
-            <?php foreach ($weekDays as $weekDay) : ?>
-                <td><?= $weekDay ?></td>
-            <?php endforeach; ?>
+            <?php foreach ($weekDays as $weekDay): ?>
+            <td><?=$weekDay?></td>
+            <?php endforeach;?>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <?php 
+        <?php 
             $day = 1;
             for($tile = 1; $tile <= $daysInMonth + $firstDay - 1; $tile++) :
                 if ($tile < $firstDay) { ?>
-                <td></td>
+                    <td></td>
                 <?php } else { ?>
                     <td><?= $day ?></td>
                 <?php $day++; }  
