@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     setcookie('password', $password, time() + 365 * 24 * 3600, '/', '', false, false);
 
 }
-
 ?>
 
 
