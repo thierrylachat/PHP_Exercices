@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!-- Création de variables et insertion du header et de la barre de navigation. -->
 
 <?php
-$titre = 'Exercice 3';
+$titre = 'Exercice 5';
 include 'header.php';
 ?>
 
