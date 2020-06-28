@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!in_array($fileextension, $allowedextension)) {
             $error = 'Le format du fichier téléchargé n\'est pas autorisé !';
 
-            // Vérification de la taille du fichier.
+        // Vérification de la taille du fichier.
         } elseif ($maxsize < $filesize) {
-            $error = 'Le fichier téléchargé depasse la taille max autorisée !';
+            $error = 'Le fichier téléchargé dépasse la taille maximale autorisée !';
         }
 
         if (empty($error)) {
@@ -31,14 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
 }
+
 include 'header.php';
 ?>
 
-<!-- création du formulaire d'envoi d' image. -->
+<!-- Création du formulaire d'envoi d'image. -->
 <form action="" method="post" enctype="multipart/form-data">
     <label for="picture">Téléchager une image de profile</label>
     <input type="file" name="picture" id="picture">
-    <p>Formats acceptés (jpg, jpeg, png, gif), taille max 2M</p>
+    <p>Formats acceptés (jpg, jpeg, png, gif), taille max 2M.</p>
     <p class="text-danger"><?=$error?></p>
     <input type="submit" value="Envoyer">
 </form>

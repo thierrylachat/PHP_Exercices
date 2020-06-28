@@ -12,7 +12,7 @@ $regexNames = '/^[a-zéèîïêëç]+((?:\-|\s)[a-zéèéîïêëç]+)?$/i';
 // Création du upload de la photo.
 $photo = $_COOKIE['picture'] ?? 'default.jpg';
 
-// Sounmission du formulaire.
+// Soumission du formulaire.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isSubmitted = true;
 
