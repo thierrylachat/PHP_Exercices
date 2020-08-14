@@ -10,13 +10,22 @@ curl_setopt($curl, CURLOPT_URL, 'https://rmcsport.bfmtv.com/rss/info/flux-rss/fl
 // Sans cette option, le contenu s'affichera directement dans la page.
 // CURLOPT_RETURNTRANSFER TRUE pour retourner le transfert en tant que chaîne de caractères de la valeur retournée par curl_exec() au lieu de l'afficher directement.
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+// Résolution du bug lié au problème de certificat SSL.
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 // curl_exec exécute la session curl ouverte.
 $content = curl_exec($curl);
+// Affichage des erreurs si curl_exec = false.
+if ($content === false) {
+    throw new Exception(curl_error($curl), curl_errno($curl));
+}
 // curl_close ferme une session CURL.
 curl_close($curl);
 // On parse notre contenu xml pour extraire les parties qui nous intéresse.
 $xml = new SimpleXMLElement($content);
 // echo "<pre>" . print_r($xml, 1) . "</pre>" // affiche l'arbre du DOM XMl.
+
+// 2° méthode pour parser le contenu xml.
+// $xml = new SimpleXMLElement('https://rmcsport.bfmtv.com/rss/info/flux-rss/flux-toutes-les-actualites/', NULL, true);
 
 // /!\ tous les flux RSS ne sont pas identiques.
 
